@@ -1,6 +1,6 @@
 {
-	"name": "getmydeck",
-	"version": "0.0.1",
+	"name": "getmydeck-app",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
