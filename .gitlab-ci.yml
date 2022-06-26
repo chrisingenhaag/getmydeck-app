@@ -1,0 +1,46 @@
+
+stages:
+  - build
+  - docker
+
+test:
+  stage: build
+  image: mcr.microsoft.com/playwright:v1.22.0-focal
+  script: 
+    - npm ci
+    - npm run test
+
+build:
+  stage: build
+  image: node:lts-alpine
+  script: 
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    policy: push
+    paths:
+      - node_modules
+
+build docker image:
+  stage: docker
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  dependencies:
+    - build
+  only:
+    - main
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF}"
+      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}"
+
