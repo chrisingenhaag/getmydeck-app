@@ -20,6 +20,15 @@ const config = {
 		}),
 		prerender: {
 			default: false
+		},
+		vite: {
+			server: {
+				proxy: {
+					'/api': {
+						target: 'http://localhost:3001'
+					}
+				}
+			}
 		}
 	}
 };
