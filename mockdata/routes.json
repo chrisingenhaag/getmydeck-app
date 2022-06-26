@@ -1,0 +1,3 @@
+{
+  "/api/v2/regions/:region/versions/:versin/infos/:timestamp": "/data1"
+}
