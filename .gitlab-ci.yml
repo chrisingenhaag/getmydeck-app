@@ -50,7 +50,6 @@ build docker image:
       /kaniko/executor
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
-      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF}"
       --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}"
       --destination "${CI_REGISTRY_IMAGE}:${DECK_VERSION}"
 
