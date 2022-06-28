@@ -120,7 +120,7 @@ test('index page has expected h1', async ({ page }) => {
 	await expect(page).toHaveTitle(/GetMyDeck - Results/);
 	await expect(page.locator('h3').first()).toHaveText('Results:');
 	await expect(page.locator('h4').first()).toHaveText('Past percentages');
-	await expect(page.locator('li').first()).toHaveText('It looks like you have a EU 512GB reservation');
+	await expect(page.locator('ul > li').first()).toHaveText('It looks like you have a EU 512GB reservation');
 
 
 });
