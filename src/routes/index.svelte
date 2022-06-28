@@ -16,6 +16,9 @@
   let selectedRegionValid: boolean = true
   let selectedVersionValid: boolean = true
 
+  let reservationTimeHumanEnabled: boolean = false
+  let reserationTimeHuman: string;
+
   let rememberme = false;
 
   let regions = [
@@ -79,6 +82,13 @@
     localStorage.setItem(REMEMBERME_KEY, JSON.stringify(valueToStore));
   }
 
+  $: {
+    if(reservationTimeHumanEnabled) {
+      let humanTime = Date.parse(reserationTimeHuman) / 1000
+      reservationTime = humanTime
+    }
+  }
+
   onMount(async () => {
     let storedString = localStorage.getItem(REMEMBERME_KEY);
     if (storedString !== null) {
@@ -128,14 +138,35 @@
         {/if}
       </div>
     
+      {#if reservationTimeHumanEnabled }
+      <div class="">
+        <label for="reserationTimeHuman" class="text-gray-700">Your reservation time (in seconds from 01.01.1970 example: 1627022437). Get it like 
+          described in the <a target="_blank" href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/">reddit DeckBot description</a>.
+        </label>
+        <input type="datetime-local" class="form-input block rounded-md shadow-sm w-full mt-1 {!reserationTimeValid ? 'bg-red-50 border border-red-500 text-red-900' : ''}" name="reserationTimeHuman" id="reserationTimeHuman" bind:value={reserationTimeHuman}/>
+        {#if !reserationTimeValid }
+        <span class="text-sm text-red-600 dark:text-red-500">Please enter a valid datetime</span>
+        {/if}
+      </div>
+      {:else}
       <div class="">
         <label for="reserationTime" class="text-gray-700">Your reservation time (in seconds from 01.01.1970 example: 1627022437). Get it like 
-          described in the <a target="_blank" href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/">reddit DeckBot description</a>.
+          described in the <a target="_blank" href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/">reddit DeckBot description</a> 
+          or switch to a datetime picker with the sitch below.
         </label>
         <input type="number" class="form-input block rounded-md shadow-sm w-full mt-1 {!reserationTimeValid ? 'bg-red-50 border border-red-500 text-red-900' : ''}" name="reservationTime" id="reserationTime" bind:value={reservationTime}/>
         {#if !reserationTimeValid }
         <span class="text-sm text-red-600 dark:text-red-500">Please enter a valid timestamp (10 digits)</span>
         {/if}
+      </div>
+      {/if}
+
+      <div class="mt-2">
+        <label for="reservationTimeHumanEnabled" class="flex items-center cursor-pointer relative">
+          <input bind:checked={reservationTimeHumanEnabled} type="checkbox" id="reservationTimeHumanEnabled" class="sr-only">
+          <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full"></div>
+          <span class="ml-3 text-gray-900 text-sm font-medium">Select human readable date and time</span>
+        </label>
       </div>
 
       <label class="block mt-3">
@@ -155,3 +186,17 @@
     <Footer />
   </div>
 </div>
+
+<style>
+  .toggle-bg:after {
+    content: '';
+    @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
+  }
+  input:checked + .toggle-bg:after {
+    transform: translateX(100%);
+    @apply border-white;
+  }
+  input:checked + .toggle-bg {
+    @apply bg-blue-600 border-blue-600;
+  }
+</style>
