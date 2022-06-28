@@ -3,34 +3,34 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: [
+  // Consult https://github.com/sveltejs/svelte-preprocess
+  // for more information about preprocessors
+  preprocess: [
     preprocess({
-      postcss: true,
-    }),
+      postcss: true
+    })
   ],
 
-	kit: {
-		adapter: adapter({
-			pages: 'build',
+  kit: {
+    adapter: adapter({
+      pages: 'build',
       assets: 'build',
       fallback: 'index.html',
       precompress: false
-		}),
-		prerender: {
-			default: false
-		},
-		vite: {
-			server: {
-				proxy: {
-					'/api': {
-						target: 'http://localhost:3001'
-					}
-				}
-			}
-		}
-	}
+    }),
+    prerender: {
+      default: false
+    },
+    vite: {
+      server: {
+        proxy: {
+          '/api': {
+            target: 'http://localhost:3001'
+          }
+        }
+      }
+    }
+  }
 };
 
 export default config;
