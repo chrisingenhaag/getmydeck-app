@@ -74,4 +74,6 @@ version bump:
   script:
     - npm version patch
     - git push origin main -o ci.skip
+    - git push --tags origin main -o ci.skip
+
 
