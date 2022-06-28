@@ -4,7 +4,7 @@ stages:
 
 test:
   stage: build
-  image: mcr.microsoft.com/playwright:v1.22.0-focal
+  image: mcr.microsoft.com/playwright:v1.23.0-focal
   script:
     - npm ci
     - npm run test
