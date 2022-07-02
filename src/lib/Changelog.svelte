@@ -25,8 +25,9 @@
 
   <h4>Todo:</h4>
   <ul>
+    <li>Add graph of all regions and versions and their increases per batch</li>
     <li>
-      Use historical data to calc a 5 week average and use it to calc estimated order date (maybe)
+      Think about adding predictions
     </li>
     <li class="line-through">Make results shareable via link</li>
     <li class="line-through">Improve graph and readability</li>
