@@ -1,20 +1,33 @@
 <article class="">
   <h1 class="text-center">How long to get my Steam Deck?</h1>
-  <p>Inspired from the reddit Steam Deck Order Email Megathreads <a target="_blank" href="https://www.reddit.com/r/SteamDeck/search?q=flair_name%3A%22MEGATHREAD%22&restrict_sr=1">(list of them here)</a> 
-    I wanted to give an alternative way of getting actual information
-    besides talking to the deckbot within the reddit. 
+  <p>
+    <b>TL;DR</b> This calculator shows how much progress valve was able to make delivering Steam
+    Decks based on your personal reservation time and data other reddit users share in subreddit
+    <a target="_blank" href="https://www.reddit.com/r/SteamDeck">r/SteamDeck</a>.
+  </p>
+  <hr class="mt-2 mb-3" />
+  <p>
+    You just need to enter your region, version and reservation time to get your information about
+    how far away you are from ordering your steam deck. Every week you can just come back and see
+    how data has changed (without a reddit account and talking to deckbot every week). The url of
+    the result page is a permalink you can use to check the progress.
   </p>
   <p>
-    Anyway thanks to the great work of all guys behind the thread and their work on organizing this 
-    and making the data available. 
-    This site also relies on the data the people share in the reddit to 
-    collect information which people are able to
-    order their steam deck based on the reservation time, their region and their version.
+    This site relies on the data <a target="_blank" href="https://www.reddit.com/u/Fammy">u/Fammy</a
+    >
+    collects from the people share their data in the r/SteamDeck subreddit
+    <a
+      target="_blank"
+      href="https://www.reddit.com/r/SteamDeck/search?q=flair_name%3A%22MEGATHREAD%22&restrict_sr=1&sort=new"
+      >megathreads</a
+    >. So if get your mail from valve to order your Steam Deck please share your data to help other
+    people. This only works with your help!
   </p>
   <p>
-    Here you just need to enter your data to get your information about how far 
-    away you might be from ordering your steam deck. Every week 
-    you can just come back and see if something has changed (without a reddit 
-    account and talking to deckbot every week).
+    This project is inspired from u/Fammy`s work on deckbot which is used in the r/SteamDeck
+    subreddit. Deckbot is a chatbot who responds to user comments to give them the information this
+    calculator here also shows.
   </p>
+  <p class="text-xs">More explanations on results <a href="/explanations">here</a></p>
+  <hr class="mt-2 mb-3" />
 </article>
