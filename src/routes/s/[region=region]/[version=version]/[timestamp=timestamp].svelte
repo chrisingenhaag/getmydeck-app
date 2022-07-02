@@ -53,7 +53,7 @@
 
       <div>
         <span class="text-sm">
-          Reload to refresh results <b>or</b> share your personal permalink 
+          Reload to refresh results <b>or</b> share your personal permalink
           <a href={permalink}>{permalink}</a> with other people
         </span>
       </div>

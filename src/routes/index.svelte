@@ -159,7 +159,7 @@
       {#if reservationTimeHumanEnabled}
         <div class="">
           <label for="reserationTimeHuman" class="text-gray-700"
-            >Your reservation date and time.
+            >When did you place your reservation? This is is interpreted as your local timezone and will be converted to UTC automatically.
           </label>
           <input
             type="datetime-local"
@@ -178,7 +178,7 @@
       {:else}
         <div class="">
           <label for="reserationTime" class="text-gray-700"
-            >Your reservation time (in seconds from 01.01.1970 example: 1627022437). Get it like
+            >What is your reservation time (in seconds from 01.01.1970 example: 1627022437)? Get it like
             described in the <a
               target="_blank"
               href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/"
