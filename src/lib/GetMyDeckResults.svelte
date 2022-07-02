@@ -36,6 +36,7 @@
   <p>{errorMessage}</p>
 {:else if deckdata}
   {@html deckdata.personalInfo.htmlText}
+  <p class="text-xs">More explanations on results <a href="/explanations">here</a></p>
   <h4>Past percentages</h4>
   <DeckChart historicData={deckdata.personalInfo.historicData} />
   <p class="text-xs">
