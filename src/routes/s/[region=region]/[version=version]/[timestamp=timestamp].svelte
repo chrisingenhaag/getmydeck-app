@@ -17,6 +17,8 @@
   export let region: Region;
   export let version: Version;
   export let timestamp: string;
+
+  let permalink = `https://getmydeck.ingenhaag.dev/s/${region}/${version}/${timestamp}`;
 </script>
 
 <svelte:head>
@@ -50,9 +52,10 @@
       </nav>
 
       <div>
-        <span class="text-sm"
-          >Reload to refresh results <b>or</b> share the current page with other people</span
-        >
+        <span class="text-sm">
+          Reload to refresh results <b>or</b> share your personal permalink 
+          <a href={permalink}>{permalink}</a> with other people
+        </span>
       </div>
 
       <h3>Results:</h3>
