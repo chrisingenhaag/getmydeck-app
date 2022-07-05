@@ -1,6 +1,6 @@
 {
   "name": "getmydeck-app",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "scripts": {
     "dev": "concurrently -P -s \"command-svelte\" -n json-server,svelte \"json-server mockdata/db.json\" \"svelte-kit dev {@}\"",
     "build": "svelte-kit build",
