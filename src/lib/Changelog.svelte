@@ -1,6 +1,7 @@
 <div class="block border-t-2 text-xs">
   <h4>Changelog:</h4>
   <ul>
+    <li>July 5, 2022: Switch to SSR docker build</li>
     <li>June 28, 2022: Added datepicker as alternative for less exact lookups</li>
     <li>June 26, 2022: Separated backend from frontend</li>
     <li>June 18, 2022: Moved results to separate page for results being shareable via link</li>
