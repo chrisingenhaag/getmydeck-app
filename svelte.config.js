@@ -13,9 +13,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		prerender: {
-			default: false
-		},
 		vite: {
 			server: {
 				proxy: {
