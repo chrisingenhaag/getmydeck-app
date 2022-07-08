@@ -68,7 +68,7 @@
     type="line"
     lineOptions={chartLineOptions}
     tooltipOptions={chartTooltipOptions}
-    valuesOverPoints="1"
+    valuesOverPoints
   />
   <div class="flex flex-row">
     <div class="basis-1/2">
