@@ -1,9 +1,15 @@
-FROM bitnami/nginx
-COPY docker/nginx-vhost.conf /opt/bitnami/nginx/conf/server_blocks/
+FROM node:16-alpine
+
+WORKDIR /app
 
 COPY build/ /app/
+COPY package*.json /app/
 
-EXPOSE 8080
+RUN npm ci --production --ignore-scripts
+
+EXPOSE 3000
+
+CMD ["node", "./index.js"]
 
 HEALTHCHECK --interval=5s --timeout=1s \
-  CMD curl -f http://localhost:8080 || exit 1
+  CMD curl -f http://localhost:3000 || exit 1
