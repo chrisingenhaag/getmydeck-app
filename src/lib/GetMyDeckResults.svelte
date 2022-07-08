@@ -36,6 +36,13 @@
   <p>{errorMessage}</p>
 {:else if deckdata}
   {@html deckdata.personalInfo.htmlText}
+  {#if deckdata.personalInfo.elapsedTimePercentage >= 100}
+    <p class="text-xm">Dont forget to share your data on the latest reddit <a
+      target="_blank"
+      href="https://www.reddit.com/r/SteamDeck/search?q=flair_name%3A%22MEGATHREAD%22&restrict_sr=1&sort=new"
+      >MegaThread</a
+    > if you received your mail now!</p>
+  {/if}
   <p class="text-xs">More explanations on results <a href="/explanations">here</a></p>
   <h4>Past percentages</h4>
   <DeckChart historicData={deckdata.personalInfo.historicData} />
