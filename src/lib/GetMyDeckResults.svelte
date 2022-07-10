@@ -51,6 +51,10 @@
       >u/Fammy</a
     >: {deckdataLastUpdatedString}
   </p>
+  <p class="text-xs">
+    Data does not update live and might show zero progress for your region and version until someone shares 
+    this info and u/Fammy was able to save this in his google sheet. Please have some patience.
+  </p>
 {:else}
   <p>Fetching infos ...</p>
 {/if}
