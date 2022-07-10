@@ -8,6 +8,7 @@
 
 <script>
   import { dev } from '$app/env';
+import Title from '$lib/Title.svelte';
   export let error, status;
 </script>
 
@@ -18,7 +19,7 @@
 <div class="container mx-auto shadow-md p-5 mt-3 md:w-1/2 bg-white prose">
   <div class="grid grid-cols-1 gap-6 content-center">
     <article class="">
-      <h1 class="text-center">How long to get my Steam Deck?</h1>
+      <Title/>
 
       <p>Oops, this page does not exist</p>
 
