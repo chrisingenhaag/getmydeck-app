@@ -26,19 +26,8 @@
 
   <h4>Todo:</h4>
   <ul>
+    <li>Store updates on u/Fammy`s data per queue instead of complete datasets</li>
     <li>Add graph of all regions and versions and their increases per batch</li>
-    <li>
-      Think about adding predictions
-    </li>
-    <li class="line-through">Make results shareable via link</li>
-    <li class="line-through">Improve graph and readability</li>
-    <li class="line-through">
-      Use historical data to display last increases on your personal reservation time
-    </li>
-    <li class="line-through">
-      If deckbot data changes, persist them to disk. Load this data from disk
-    </li>
-    <li class="line-through">Update data from deckbot datasource only if they changed</li>
-    <li class="line-through">Auto update data from deckbot datasource</li>
+    <li>Think about adding predictions</li>
   </ul>
 </div>
