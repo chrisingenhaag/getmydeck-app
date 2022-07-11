@@ -44,6 +44,10 @@
     > if you received your mail now!</p>
   {/if}
   <p class="text-xs">More explanations on results <a href="/explanations">here</a></p>
+  <p class="text-xs">
+    Data does not update live and might show zero progress for your region and version until someone shares 
+    this info and u/Fammy was able to save this in his google sheet. Please have some patience.
+  </p>
   <h4>Past percentages</h4>
   <DeckChart historicData={deckdata.personalInfo.historicData} />
   <p class="text-xs">
