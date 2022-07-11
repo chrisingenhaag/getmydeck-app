@@ -6,9 +6,9 @@
 <hr class="mt-2 mb-3" />
 <p>
   You just need to enter your region, version and reservation time to get your information about
-  how far away you are from ordering your steam deck. Every week you can just come back and see
-  how data has changed (without a reddit account and talking to deckbot every week). The url of
-  the result page is a permalink you can use to check the progress.
+  how far away you are from ordering your steam deck. Every monday and thursday at about 5pm GMT 
+  you can just come back and see how data has changed (without a reddit account and talking to deckbot 
+  every week). The url of the result page is a permalink you can use to check the progress.
 </p>
 <p>
   This site relies on the data <a target="_blank" href="https://www.reddit.com/u/Fammy">u/Fammy</a
