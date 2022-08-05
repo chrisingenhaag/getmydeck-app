@@ -41,6 +41,7 @@
   },
   "type": "module",
   "dependencies": {
-    "svelte-frappe-charts": "^1.9.2"
+    "chart.js": "^3.9.1",
+    "svelte-chartjs": "^2.0.1"
   }
 }
