@@ -1,76 +1,150 @@
 <script lang="ts">
-  import type { ChartData, HistoricDeckbotData, YMarker } from '$lib/DeckTypes';
+  import type { HistoricDeckbotData } from '$lib/DeckTypes'
 
-  import Chart from 'svelte-frappe-charts';
+  import { Line } from 'svelte-chartjs'
+
+  import {
+    Chart as ChartJS,
+    Title,
+    Tooltip,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    CategoryScale,
+  } from 'chart.js';
+
+  ChartJS.register(
+    Title,
+    Tooltip,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    CategoryScale
+  );
 
   export let historicData: HistoricDeckbotData[];
 
-  let chartData: ChartData = {
-    labels: [],
-    datasets: []
-  };
+  let data
+  let config
 
-  const yMarkers: YMarker[] = [
-    {
-      label: '',
-      value: 0,
-      type: 'solid'
-    },
-    {
-      label: '',
-      value: 100,
-      type: 'solid'
-    }
-  ];
-
-  let chartLineOptions = {
-    regionFill: 1 // default: 0
-  };
-
-  let chartTooltipOptions = {
-    formatTooltipY: (d: number) => d + ' %',
-    formatTooltipX: (d: string) => 'date: ' + d
-  };
-
-  let showAllData = false;
-  let showFullYScale = false;
+  let showAllData = false
+  let showFullYScale = false
 
   $: {
-    let values: number[] = [];
-    let labels: string[] = [];
-    const datacopy: HistoricDeckbotData[] = [];
+    const datacopy: HistoricDeckbotData[] = []
 
-    const tempArray = historicData.slice(0, showAllData ? historicData.length - 1 : 7);
-    tempArray.forEach((val) => datacopy.push(Object.assign({}, val)));
+    let percentages: number[] = []
+    let increases: number[] = []
+    let labels: string[] = []
+
+    const tempArray = historicData.slice(0, showAllData ? historicData.length - 1 : 7)
+    tempArray.forEach((val) => datacopy.push(Object.assign({}, val)))
 
     datacopy.reverse().forEach((item) => {
-      const monthDay = item.date.split('-');
-      labels.push(monthDay[1] + '-' + monthDay[2]);
-      values.push(item.elapsedTimePercentage);
+      const monthDay = item.date.split('-')
+      
+      labels.push(monthDay[1] + '-' + monthDay[2])
+      percentages.push(item.elapsedTimePercentage)
+      increases.push(item.increasedPercentage)
+
     });
-    chartData.labels = labels;
-    chartData.datasets = [
-      {
-        values: values
+    
+    data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Percentage',
+          data: percentages,
+          yAxisID: 'y',
+          borderColor: "#7cd6fd",
+          backgroundColor: "#7cd6fd",
+          tension: 0.4
+        },
+        {
+          label: 'Increase',
+          data: increases,
+          yAxisID: 'y1',
+          borderColor: "#F5DE41",
+          backgroundColor: "#F5DE41",
+          tension: 0.4
+        }
+      ]
+    }
+
+    config = {
+      borderRadius: '30',
+      responsive: true,
+      cutout: '95%',
+      spacing: 2,
+      scales: {
+        y: {
+          title: {
+            display: true,
+            text: "Overall Percentage per batch (%)"
+          },
+          type: 'linear',
+          display: true,
+          position: 'left',
+          suggestedMax: showFullYScale ? 100 : undefined
+        },
+        y1: {
+          title: {
+            display: true,
+            text: "Increase per batch (%)"
+          },
+          type: 'linear',
+          display: true,
+          position: 'right',
+          suggestedMax: Math.max(...increases)*2,
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        },
+      },
+      interaction: {
+        intersect: false,
+        mode: 'index',
+      },
+      plugins: {
+        tooltip: {
+          enabled: true,
+          position: 'nearest',
+        },
+        legend: {
+          position: 'bottom',
+          display: true,
+          title: {
+            display: true,
+            text: "Date (Month-Day)"
+          },
+          labels: {
+            usePointStyle: true,
+            padding: 20,
+            font: {
+              size: 14
+            }
+          }
+        }
       }
-    ];
+    };
+
+
     if (showFullYScale) {
-      chartData.yMarkers = yMarkers;
+    
     } else {
-      chartData.yMarkers = undefined;
+    
     }
   }
 </script>
 
-{#if chartData}
-  <Chart
-    data={chartData}
-    type="line"
-    lineOptions={chartLineOptions}
-    tooltipOptions={chartTooltipOptions}
-    valuesOverPoints
-  />
-  <div class="flex flex-row">
+{#if data}
+  
+  <Line {data} options={config} />
+
+  <div class="flex flex-row mt-3">
     <div class="basis-1/2">
       <label for="showAllData" class="flex items-center cursor-pointer relative">
         <input bind:checked={showAllData} type="checkbox" id="showAllData" class="sr-only" />

@@ -21,6 +21,7 @@ export interface OfficialInfo {
 export interface HistoricDeckbotData {
   date: string;
   elapsedTimePercentage: number;
+  increasedPercentage: number;
 }
 
 export interface ChartData {
