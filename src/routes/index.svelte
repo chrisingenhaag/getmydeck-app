@@ -105,7 +105,6 @@
   <title>GetMyDeck - Calculator</title>
 </svelte:head>
 
-
 <Description />
 
 <div class="mb-3">
@@ -115,8 +114,8 @@
       >In which region did you preorder your Steam Deck?</label
       >
       <select
-      class="form-select block rounded-md shadow-sm w-full mt-1 {!selectedRegionValid
-        ? 'bg-red-50 border border-red-500 text-red-900'
+      class="select select-bordered w-full max-w {!selectedRegionValid
+        ? 'select-error'
         : ''}"
       id="region"
       name="region"
@@ -133,11 +132,11 @@
     <span class="text-sm text-red-600 dark:text-red-500">Please select a region</span>
     {/if}
   </div>
-  <div class="">
+  <div class="form-control w-full max-w">
     <label for="version" class="text-gray-700">Which version did you reserve?</label>
     <select
-    class="form-select block rounded-md shadow-sm w-full mt-1 {!selectedVersionValid
-        ? 'bg-red-50 border border-red-500 text-red-900'
+    class="select select-bordered w-full max-w {!selectedVersionValid
+        ? 'select-error'
         : ''}"
       id="version"
       name="version"
@@ -156,7 +155,7 @@
   </div>
   
   {#if reservationTimeHumanEnabled}
-  <div class="">
+  <div class="form-control w-full max-w">
     <label for="reserationTimeHuman" class="text-gray-700"
     >When did you place your reservation? This is is interpreted as your local timezone and will be converted to UTC automatically.
   </label>
@@ -175,7 +174,7 @@
           {/if}
         </div>
         {:else}
-        <div class="">
+        <div class="form-control w-full max-w">
           <label for="reserationTime" class="text-gray-700"
           >What is your reservation time (in seconds from 01.01.1970 example: 1627022437)? Get it like
           described in the <a
@@ -187,8 +186,8 @@
         </label>
         <input
         type="number"
-        class="form-input block rounded-md shadow-sm w-full mt-1 {!reserationTimeValid
-          ? 'bg-red-50 border border-red-500 text-red-900'
+        class="input input-bordered input-md w-full max-w {!reserationTimeValid
+          ? 'input-error'
           : ''}"
         name="reservationTime"
         id="reserationTime"
@@ -202,55 +201,24 @@
       </div>
       {/if}
       
-      <div class="mt-2">
-        <label for="reservationTimeHumanEnabled" class="flex items-center cursor-pointer relative">
-          <input
-          bind:checked={reservationTimeHumanEnabled}
-          type="checkbox"
-          id="reservationTimeHumanEnabled"
-          class="sr-only"
-          />
-          <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />
-          <span class="ml-3 text-gray-900 text-sm font-medium"
-          >Select human readable date and time</span
-          >
+      <div class="form-control mt-2 w-1/2">
+        <label class="label cursor-pointer" for="reservationTimeHumanEnabled">
+          <input bind:checked={reservationTimeHumanEnabled} id="reservationTimeHumanEnabled" type="checkbox" class="toggle toggle-secondary" />
+          <span class="label-text">Select human readable date and time</span>
         </label>
       </div>
       
-      <label class="block mt-3">
-        <input
-        type="checkbox"
-        class="form-input rounded-md shadow-sm"
-        name="rememberme"
-        id="rememberme"
-        bind:checked={rememberme}
-        />
-        <span class="text-gray-700">Remember me</span>
-      </label>
+      <div class="form-control mt-1 w-1/4">
+        <label class="label cursor-pointer">
+          <input bind:checked={rememberme} type="checkbox" name="rememberme" id="rememberme" class="checkbox checkbox-secondary" />
+          <span class="label-text">Remember me</span> 
+        </label>
+      </div>
       
-      <label class="">
-        <button
-        class="px-4 py-2 mt-5 font-semibold text-sm bg-sky-900 active:bg-sky-600 text-white rounded-lg shadow-sm"
-        type="submit"
-        >
-        Get my current preorder status
-      </button>
-    </label>
+      <div class="form-control mt-1 w-1/2">
+        <button class="btn btn-primary btn-sm text-white normal-case" type="submit">Get my current preorder status</button>
+      </div>
   </form>
 </div>
   
 <Changelog />
-  
-<style>
-.toggle-bg:after {
-  content: '';
-  @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
-}
-input:checked + .toggle-bg:after {
-  transform: translateX(100%);
-  @apply border-white;
-}
-input:checked + .toggle-bg {
-  @apply bg-blue-600 border-blue-600;
-}
-</style>
