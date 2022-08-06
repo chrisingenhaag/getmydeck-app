@@ -8,20 +8,25 @@
     Title,
     Tooltip,
     Legend,
+    Filler,
     LineElement,
     LinearScale,
     PointElement,
     CategoryScale,
   } from 'chart.js';
 
+  import ChartDataLabels from 'chartjs-plugin-datalabels';
+
   ChartJS.register(
     Title,
     Tooltip,
     Legend,
+    Filler,
     LineElement,
     LinearScale,
     PointElement,
-    CategoryScale
+    CategoryScale,
+    ChartDataLabels
   );
 
   export let historicData: HistoricDeckbotData[];
@@ -58,17 +63,38 @@
           label: 'Percentage',
           data: percentages,
           yAxisID: 'y',
+          borderWidth: 2,
           borderColor: "#7cd6fd",
           backgroundColor: "#7cd6fd",
-          tension: 0.4
+          pointRadius: 4,
+          pointBorderColor: "#ffffff",
+          tension: 0.3,
+          fill: {
+            target: 'origin',
+            above: 'rgba(124, 214, 253, 0.2)'
+          },
+          datalabels: {
+            display: !showAllData,
+            color: '#000000',
+            anchor: 'end',
+            align: 'end',
+            clamp: true,
+            visibility: 'auto'
+          }
         },
         {
           label: 'Increase',
           data: increases,
           yAxisID: 'y1',
+          borderWidth: 2,
           borderColor: "#F5DE41",
           backgroundColor: "#F5DE41",
-          tension: 0.4
+          pointRadius: 4,
+          pointBorderColor: "#ffffff",
+          tension: 0.3,
+          datalabels: {
+            display: false
+          }
         }
       ]
     }
@@ -82,17 +108,20 @@
         y: {
           title: {
             display: true,
-            text: "Overall Percentage per batch (%)"
+            text: "Overall Percentages (%)"
           },
           type: 'linear',
           display: true,
           position: 'left',
-          suggestedMax: showFullYScale ? 100 : undefined
+          suggestedMax: showFullYScale ? 100 : undefined,
+          ticks: {
+            padding: 10
+          }
         },
         y1: {
           title: {
             display: true,
-            text: "Increase per batch (%)"
+            text: "Increases (%)"
           },
           type: 'linear',
           display: true,
@@ -102,13 +131,25 @@
           grid: {
             drawOnChartArea: false, // only want the grid lines for one axis to show up
           },
+          ticks: {
+            padding: 10
+          }
         },
       },
       interaction: {
         intersect: false,
         mode: 'index',
       },
+      layout: {
+        padding: {
+          top: 24,
+          bottom: 8,
+        }
+      },
       plugins: {
+        filler: {
+          propagate: false,
+        },
         tooltip: {
           enabled: true,
           position: 'nearest',
@@ -130,13 +171,6 @@
         }
       }
     };
-
-
-    if (showFullYScale) {
-    
-    } else {
-    
-    }
   }
 </script>
 
