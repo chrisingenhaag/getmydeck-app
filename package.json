@@ -43,6 +43,7 @@
   "dependencies": {
     "chart.js": "^3.9.1",
     "chartjs-plugin-datalabels": "^2.1.0",
+    "daisyui": "^2.22.0",
     "svelte-chartjs": "^2.0.1"
   }
 }
