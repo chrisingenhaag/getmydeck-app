@@ -109,7 +109,7 @@
         y: {
           title: {
             display: true,
-            text: "Overall Percentages (%)"
+            text: "Overall Percentage (%)"
           },
           type: 'linear',
           display: true,
@@ -122,7 +122,7 @@
         y1: {
           title: {
             display: true,
-            text: "Increases (%)"
+            text: "Increase (%)"
           },
           type: 'linear',
           display: true,
