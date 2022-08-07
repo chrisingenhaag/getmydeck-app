@@ -161,8 +161,8 @@
   </label>
   <input
   type="datetime-local"
-  class="form-input block rounded-md shadow-sm w-full mt-1 {!reserationTimeValid
-          ? 'bg-red-50 border border-red-500 text-red-900'
+  class="input input-bordered input-md w-full max-w  {!reserationTimeValid
+          ? 'input-error'
           : ''}"
         name="reserationTimeHuman"
         id="reserationTimeHuman"
@@ -178,7 +178,7 @@
           <label for="reserationTime" class="text-gray-700"
           >What is your reservation time (in seconds from 01.01.1970 example: 1627022437)? Get it like
           described in the <a
-          target="_blank"
+          target="_blank" class="link" 
           href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/"
           >reddit DeckBot description</a
           >
