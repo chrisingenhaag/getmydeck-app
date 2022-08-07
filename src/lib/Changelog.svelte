@@ -1,6 +1,7 @@
 <div class="block border-t-2 text-xs">
   <h4>Changelog:</h4>
   <ul>
+    <li>August 7, 2022: Add increase data series to graph</li>
     <li>July 5, 2022: Switch to SSR docker build</li>
     <li>June 28, 2022: Added datepicker as alternative for less exact lookups</li>
     <li>June 26, 2022: Separated backend from frontend</li>
@@ -27,7 +28,6 @@
   <h4>Todo:</h4>
   <ul>
     <li>Store updates on u/Fammy`s data per queue instead of complete datasets</li>
-    <li>Add graph of all regions and versions and their increases per batch</li>
     <li>Think about adding predictions</li>
   </ul>
 </div>
