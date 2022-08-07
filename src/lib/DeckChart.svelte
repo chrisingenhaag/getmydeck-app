@@ -122,7 +122,7 @@
         y1: {
           title: {
             display: true,
-            text: "Increase (%)"
+            text: "Percent point increase"
           },
           type: 'linear',
           display: true,
