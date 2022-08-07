@@ -35,15 +35,17 @@
 {#if errorMessage}
   <p>{errorMessage}</p>
 {:else if deckdata}
-  {@html deckdata.personalInfo.htmlText}
+  <div id="results">
+    {@html deckdata.personalInfo.htmlText}
+  </div>
   {#if deckdata.personalInfo.elapsedTimePercentage >= 100}
     <p class="text-xm">Dont forget to share your data on the latest reddit <a
-      target="_blank"
+      target="_blank" class="link" 
       href="https://www.reddit.com/r/SteamDeck/search?q=flair_name%3A%22MEGATHREAD%22&restrict_sr=1&sort=new"
       >MegaThread</a
     > if you received your mail now!</p>
   {/if}
-  <p class="text-xs">More explanations on results <a href="/explanations">here</a></p>
+  <p class="text-xs">More explanations on results <a class="link" href="/explanations">here</a></p>
   <p class="text-xs">
     Data does not update live and might show zero progress for your region and version until someone shares 
     this info and u/Fammy was able to save this in his google sheet. Please have some patience.
@@ -51,7 +53,7 @@
   <h4>Past percentages</h4>
   <DeckChart historicData={deckdata.personalInfo.historicData} />
   <p class="text-xs">
-    Data last updated from deckbot sheet by <a target="_blank" href="https://www.reddit.com/u/Fammy"
+    Data last updated from deckbot sheet by <a target="_blank" class="link"  href="https://www.reddit.com/u/Fammy"
       >u/Fammy</a
     >: {deckdataLastUpdatedString}
   </p>

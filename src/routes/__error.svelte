@@ -23,7 +23,7 @@ import Title from '$lib/Title.svelte';
 
       <p>Oops, this page does not exist</p>
 
-      <a href="/">Back to Home</a>
+      <a class="link" href="/">Back to Home</a>
 
       {#if dev && error.stack}
         <pre>{error.stack}</pre>
