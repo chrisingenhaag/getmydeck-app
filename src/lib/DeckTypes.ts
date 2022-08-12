@@ -3,7 +3,6 @@ export type Region = 'EU' | 'UK' | 'US';
 
 export interface DeckData {
   personalInfo: PersonalInfo;
-  officialInfo: OfficialInfo;
 }
 
 export interface PersonalInfo {
@@ -11,17 +10,15 @@ export interface PersonalInfo {
   htmlText: string;
   elapsedTimePercentage: number;
   historicData: HistoricDeckbotData[];
-}
-
-export interface OfficialInfo {
   lastDataUpdate: string;
-  lastDataUpdateDate: string;
+  lastBatchDate: string;
+  region: Region;
+  version: Version;
 }
-
 export interface HistoricDeckbotData {
   date: string;
-  elapsedTimePercentage: number;
-  increasedPercentage: number;
+  elapsedTimePercentage?: number;
+  increasedPercentage?: number;
 }
 
 export interface ChartData {

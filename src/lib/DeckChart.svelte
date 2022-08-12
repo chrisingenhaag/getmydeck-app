@@ -40,8 +40,8 @@
   $: {
     const datacopy: HistoricDeckbotData[] = []
 
-    let percentages: number[] = []
-    let increases: number[] = []
+    let percentages: [] = []
+    let increases: [] = []
     let labels: string[] = []
 
     const tempArray = historicData.slice(0, showAllData ? historicData.length - 1 : 7)
@@ -51,8 +51,16 @@
       const monthDay = item.date.split('-')
       
       labels.push(monthDay[1] + '-' + monthDay[2])
-      percentages.push(item.elapsedTimePercentage)
-      increases.push(item.increasedPercentage)
+      if(item.elapsedTimePercentage) {
+        percentages.push(item.elapsedTimePercentage)
+      } else {
+        percentages.push(null)
+      }
+      if(item.increasedPercentage) {
+        increases.push(item.increasedPercentage)
+      } else {
+        increases.push(null)
+      }
 
     });
     
@@ -69,6 +77,7 @@
           pointRadius: 4,
           pointBorderColor: "#ffffff",
           tension: 0.3,
+          spanGaps: true,
           fill: {
             target: 'origin',
             above: 'rgba(124, 214, 253, 0.2)'
@@ -92,6 +101,7 @@
           pointRadius: 4,
           pointBorderColor: "#ffffff",
           tension: 0.3,
+          spanGaps: true,
           datalabels: {
             display: false
           }
