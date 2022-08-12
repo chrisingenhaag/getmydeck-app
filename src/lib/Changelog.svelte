@@ -1,6 +1,7 @@
 <div class="block border-t-2 text-xs">
   <h4>Changelog:</h4>
   <ul>
+    <li>August 12, 2022: Last update date is now specific per queue. No more 0 progress on batchdays without new data on some queues</li>
     <li>August 7, 2022: Add increase data series to graph</li>
     <li>July 5, 2022: Switch to SSR docker build</li>
     <li>June 28, 2022: Added datepicker as alternative for less exact lookups</li>

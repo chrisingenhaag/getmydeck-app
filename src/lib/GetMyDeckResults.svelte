@@ -19,7 +19,7 @@
       .then((data) => {
         deckdata = data;
 
-        let date = new Date(deckdata.officialInfo.lastDataUpdate);
+        let date = new Date(deckdata.personalInfo.lastDataUpdate);
         deckdataLastUpdatedString = date.toLocaleString();
       })
       .catch(() => {
@@ -46,14 +46,10 @@
     > if you received your mail now!</p>
   {/if}
   <p class="text-xs">More explanations on results <a class="link" href="/explanations">here</a></p>
-  <p class="text-xs">
-    Data does not update live and might show zero progress for your region and version until someone shares 
-    this info and u/Fammy was able to save this in his google sheet. Please have some patience.
-  </p>
   <h4>Past percentages</h4>
   <DeckChart historicData={deckdata.personalInfo.historicData} />
   <p class="text-xs">
-    Data last updated from deckbot sheet by <a target="_blank" class="link"  href="https://www.reddit.com/u/Fammy"
+    Data for this queue {deckdata.personalInfo.region} {deckdata.personalInfo.version} last updated from deckbot sheet by <a target="_blank" class="link"  href="https://www.reddit.com/u/Fammy"
       >u/Fammy</a
     >: {deckdataLastUpdatedString}
   </p>
