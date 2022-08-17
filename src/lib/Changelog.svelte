@@ -28,7 +28,6 @@
 
   <h4>Todo:</h4>
   <ul>
-    <li>Store updates on u/Fammy`s data per queue instead of complete datasets</li>
     <li>Think about adding predictions</li>
   </ul>
 </div>
