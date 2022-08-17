@@ -191,17 +191,17 @@
 
   <div class="flex flex-row mt-3">
     <div class="basis-1/2">
-      <label for="showAllData" class="flex items-center cursor-pointer relative">
+      <label for="showAllData" class="flex flex-wrap items-center cursor-pointer relative">
         <input bind:checked={showAllData} type="checkbox" id="showAllData" class="sr-only" />
-        <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />
-        <span class="ml-3 text-gray-900 text-sm font-medium">Show all data</span>
+        <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3" />
+        <span class="text-gray-900 text-sm font-medium">Show all data</span>
       </label>
     </div>
     <div class="basis-1/2">
-      <label for="showFullYScale" class="flex items-center cursor-pointer relative">
+      <label for="showFullYScale" class="flex flex-wrap items-center cursor-pointer relative">
         <input bind:checked={showFullYScale} type="checkbox" id="showFullYScale" class="sr-only" />
-        <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />
-        <span class="ml-3 text-gray-900 text-sm font-medium">Full % scale</span>
+        <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3" />
+        <span class="text-gray-900 text-sm font-medium">Full % scale</span>
       </label>
     </div>
   </div>
