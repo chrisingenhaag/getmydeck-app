@@ -13,25 +13,20 @@ build:
   stage: build
   image: node:lts-alpine
   script:
-    - npm ci
-    - npm run build
     - >
       if [ "$CI_COMMIT_REF_NAME" == "main" ]; then
-        echo "export DECK_VERSION=$(npm run --silent currentversion);" > version-vars.sh
+        echo "export DECK_VERSION=$(npm run --silent currentversion 2> /dev/null);" > version-vars.sh
       else
-        echo "export DECK_VERSION=$(npm run --silent currentversion)-SNAPSHOT;" > version-vars.sh
+        echo "export DECK_VERSION=$(npm run --silent currentversion 2> /dev/null)-SNAPSHOT;" > version-vars.sh
       fi
     - source version-vars.sh
     - echo $DECK_VERSION
+    - npm ci
+    - npm run build
   artifacts:
     paths:
       - build/
       - version-vars.sh
-  cache:
-    key: '$CI_COMMIT_REF_NAME'
-    policy: push
-    paths:
-      - node_modules
 
 build docker image:
   stage: release
