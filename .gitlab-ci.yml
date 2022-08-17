@@ -14,7 +14,6 @@ build:
   image: node:lts-alpine
   script:
     - npm run --silent currentversion 2> /dev/null
-    - echo $npm_package_version
     - >
       if [ "$CI_COMMIT_REF_NAME" == "main" ]; then
         echo "export DECK_VERSION=$(npm run --silent currentversion 2> /dev/null);" > version-vars.sh
