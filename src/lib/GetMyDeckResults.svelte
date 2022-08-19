@@ -23,7 +23,7 @@
         deckdataLastUpdatedString = date.toLocaleString();
       })
       .catch(() => {
-        errorMessage = 'Problem loading infos.';
+        errorMessage = 'Problem loading infos. Maybe the data entered is invalid or the api is not available at the moment. Please try again later.';
       });
   };
 
