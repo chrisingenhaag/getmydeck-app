@@ -15,7 +15,7 @@
   "devDependencies": {
     "@playwright/test": "^1.23.0",
     "@sveltejs/adapter-node": "^1.0.0-next.86",
-    "@sveltejs/kit" : "1.0.0-next.405",
+    "@sveltejs/kit" : "next",
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.2",
     "@tsconfig/svelte": "^3.0.0",
