@@ -1,6 +1,12 @@
 export type Version = '64' | '256' | '512';
 export type Region = 'EU' | 'UK' | 'US';
 
+export interface DeckResultsPageData {
+  region: Region;
+  version: Version;
+  timestamp: string;
+}
+
 export interface DeckData {
   personalInfo: PersonalInfo;
 }

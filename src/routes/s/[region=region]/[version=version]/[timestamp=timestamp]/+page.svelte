@@ -1,21 +1,13 @@
-<script context="module">
-  export async function load({ params }) {
-    const { region, version, timestamp } = params;
-
-    return {
-      props: { region, version, timestamp }
-    };
-  }
-</script>
-
-<script lang="ts">
-  import type { Region, Version } from '$lib/DeckTypes';
+<script lang="ts">  
+  import type { DeckResultsPageData } from '$lib/DeckTypes';
+  
+  export let data: DeckResultsPageData;
 
   import GetMyDeckResults from '$lib/GetMyDeckResults.svelte';
 
-  export let region: Region;
-  export let version: Version;
-  export let timestamp: string;
+  let region = data.region;
+  let version = data.version;
+  let timestamp = data.timestamp;
 
   let permalink = `https://getmydeck.ingenhaag.dev/s/${region}/${version}/${timestamp}`;
 </script>
