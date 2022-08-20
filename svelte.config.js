@@ -12,19 +12,7 @@ const config = {
   ],
 
 	kit: {
-		adapter: adapter(),
-		vite: {
-			ssr:{
-				noExternal: ['chart.js']
-			},
-			server: {
-				proxy: {
-					'/api': {
-						target: 'http://localhost:3001'
-					}
-				}
-			}
-		}
+		adapter: adapter()
 	}
 };
 
