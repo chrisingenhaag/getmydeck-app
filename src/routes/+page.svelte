@@ -182,7 +182,7 @@
           href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/"
           >reddit DeckBot description</a
           >
-          or switch to a datetime picker with the sitch below.
+          or switch to a datetime picker with the toggle below.
         </label>
         <input
         type="number"
