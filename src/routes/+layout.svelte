@@ -6,7 +6,7 @@
   import '../app.css';
 </script>
 
-<div class="container mx-auto shadow-md p-5 mt-3 lg:w-1/2 bg-white">
+<div class="container mx-auto shadow-md p-5 mt-3 lg:w-1/2 max-w-prose bg-white">
   <div class="grid grid-cols-1 gap-6 content-center">
     <article class="">
       <Navigation />
