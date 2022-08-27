@@ -201,21 +201,21 @@
       </div>
       {/if}
       
-      <div class="form-control mt-2 w-1/2">
+      <div class="form-control mt-2 flex flex-row">
         <label class="label cursor-pointer" for="reservationTimeHumanEnabled">
           <input bind:checked={reservationTimeHumanEnabled} id="reservationTimeHumanEnabled" type="checkbox" class="toggle toggle-secondary" />
-          <span class="label-text">Select human readable date and time</span>
+          <span class="label-text pl-3">Select human readable date and time</span>
         </label>
       </div>
       
-      <div class="form-control mt-1 w-1/4">
+      <div class="form-control mt-1 flex flex-row">
         <label class="label cursor-pointer">
           <input bind:checked={rememberme} type="checkbox" name="rememberme" id="rememberme" class="checkbox checkbox-secondary" />
-          <span class="label-text">Remember me</span> 
+          <span class="label-text pl-3">Remember me</span> 
         </label>
       </div>
       
-      <div class="form-control mt-1 w-1/2">
+      <div class="form-control mt-1 flex flex-col">
         <button class="btn btn-primary btn-sm text-white normal-case" type="submit">Get my current preorder status</button>
       </div>
   </form>
