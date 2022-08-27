@@ -1,4 +1,4 @@
-<div class="block border-t-2">
+<div class="block border-t-2 prose py-4">
   <p>
     Created by <a
       target="_blank" class="link" 
