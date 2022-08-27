@@ -23,12 +23,13 @@
   </ul>
 </div>
 
-<div>
+<div class="prose">
   <span class="text-sm">
     Reload to refresh results <b>or</b> share your personal permalink
     <a class="link" href={permalink}>{permalink}</a> with other people
   </span>
+  
+  <h3>Results:</h3>
 </div>
 
-<h3>Results:</h3>
 <GetMyDeckResults {region} {version} {timestamp} />
