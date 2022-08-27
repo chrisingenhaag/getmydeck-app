@@ -16,7 +16,7 @@
   </div>
   <div class="navbar-end">
     <div class="w-10 rounded-full">
-      <img src="/favicon.png" />
+      <img src="/favicon.png" alt="Steam Deck logo" />
     </div>  
   </div>
 </div>
