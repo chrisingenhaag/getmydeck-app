@@ -107,7 +107,7 @@
 
 <Description />
 
-<div class="mb-3">
+<div class="mb-3 prose">
   <form on:submit|preventDefault={handleSubmit}>
     <div class="">
       <label for="region" class="text-gray-700"
