@@ -27,6 +27,6 @@
     subreddit. Deckbot is a chatbot who responds to user comments to give them the information this
     calculator here also shows.
   </p>
-  <p class="text-xs">More explanations on how this works <a class="link" href="/explanations">here</a></p>
+  <p class="text-xs">More on how this works can be found on the<a class="link" href="/explanations">explanation page</a></p>
   <hr class="mt-2 mb-3" />
 </div>
