@@ -32,8 +32,8 @@
     }
   }
 
-  let chart: Chart;
-  let lineChart: HTMLCanvasElement;
+  let statChart: Chart;
+  let statChartElement: HTMLCanvasElement;
 
   let data
   let config
@@ -82,7 +82,10 @@
           borderColor: colors[region][version],
           backgroundColor: colors[region][version],
           pointBorderColor: "#ffffff",
-          spanGaps: true
+          spanGaps: true,
+          datalabels: {
+              display: false
+          }
         }
 
         dataSetArray.push(dataSetObject)
@@ -90,13 +93,13 @@
     })
 
 
-    if (chart) {
+    if (statChart) {
       data.labels = labels
       data.datasets = dataSetArray
       
-      chart.data = data
-      chart.options = config
-      chart.update()
+      statChart.data = data
+      statChart.options = config
+      statChart.update()
     }
   }
 
@@ -170,7 +173,7 @@
         }
       }
       
-      chart = new Chart(lineChart, {
+      statChart = new Chart(statChartElement, {
         type: 'line',
         data: data,
         options: config
@@ -180,13 +183,13 @@
 
 
   onDestroy(() => {
-    if (chart) chart.destroy();
-    chart = null;
+    if (statChart) statChart.destroy();
+    statChart = null;
   })
 
 </script>
 
-<canvas bind:this={lineChart} />
+<canvas bind:this={statChartElement} />
 
 <div class="flex flex-row my-3">
   <div class="pr-3">
