@@ -14,9 +14,9 @@
 </div>
 
 <div class="prose">
-  <h3>Overall statistics</h3>
+  <h3>All queue statistics</h3>
   <p>
-    This statistic graph shows the progress of all regions and versions according 
+    This graph shows the progress of all regions and versions according 
     to the day of batch and latest known order date.
   </p>
 
