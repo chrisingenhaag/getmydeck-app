@@ -7,6 +7,7 @@
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li><a href="/">Start</a></li>
         <li><a href="/explanations">How this works?</a></li>
+        <li><a href="/statistics">Overall statistics</a></li>
         <li><a href="https://www.reddit.com/r/SteamDeck" target="_blank">r/SteamDeck</a></li>
       </ul>
     </div>
