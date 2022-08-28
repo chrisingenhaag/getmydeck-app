@@ -1,5 +1,4 @@
-<div class="block border-t-2 text-xs prose">
-  <h4 class="mt-4 mb-2">Changelog:</h4>
+<div class="prose">
   <ul>
     <li>August 12, 2022: Last update date is now specific per queue. No more 0 progress on batchdays without new data on some queues</li>
     <li>August 7, 2022: Add increase data series to graph</li>
