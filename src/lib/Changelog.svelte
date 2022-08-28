@@ -1,5 +1,6 @@
 <div class="prose">
   <ul>
+    <li>August 28, 2022: Insert navigation, all-queue statistics page and some ui changes</li>
     <li>August 12, 2022: Last update date is now specific per queue. No more 0 progress on batchdays without new data on some queues</li>
     <li>August 7, 2022: Add increase data series to graph</li>
     <li>July 5, 2022: Switch to SSR docker build</li>
