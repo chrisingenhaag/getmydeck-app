@@ -220,5 +220,3 @@
       </div>
   </form>
 </div>
-  
-<Changelog />

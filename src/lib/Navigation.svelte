@@ -8,6 +8,7 @@
         <li><a href="/">Start</a></li>
         <li><a href="/explanations">How this works?</a></li>
         <li><a href="/statistics">Overall statistics</a></li>
+        <li><a href="/changelog">Changelog</a></li>
         <li><a href="https://www.reddit.com/r/SteamDeck" target="_blank">r/SteamDeck</a></li>
       </ul>
     </div>
