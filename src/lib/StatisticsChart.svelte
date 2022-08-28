@@ -149,6 +149,9 @@
             enabled: true,
             position: 'nearest',
             callbacks: {
+              beforeTitle: function(context) {
+                return 'Latest known order on'
+              } ,
               label: function(context) {
                 let label = context.dataset.label || '';
 
