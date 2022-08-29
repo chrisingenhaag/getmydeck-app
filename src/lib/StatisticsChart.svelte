@@ -112,7 +112,7 @@
       config = {
         borderRadius: '30',
         responsive: true,
-        aspectRatio: 1.3,
+        aspectRatio: 1.1,
         cutout: '95%',
         spacing: 2,
         scales: {
