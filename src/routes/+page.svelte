@@ -3,7 +3,7 @@
 
   import type { Region, Version } from '$lib/DeckTypes';
   import Description from '$lib/Description.svelte';
-  import Changelog from '$lib/Changelog.svelte';
+  import { DATA_KEY } from '$lib/Constants';
 
   const REMEMBERME_KEY = 'urn:getmydeck:rememberme';
 
@@ -19,6 +19,9 @@
   let reserationTimeHuman: string;
 
   let rememberme = false;
+
+  let modalVisible = false
+  let modalDismissed = false
 
   let regions = [
     { id: 0, text: `empty`, value: undefined },
@@ -68,8 +71,18 @@
       } else {
         localStorage.clear();
       }
-
+      saveDismissedModalInfo();
       window.location.assign(resultLink);
+    }
+  }
+
+  let dismissModal = () => {
+    modalDismissed = true
+  }
+
+  let showModalOneTime = () => {
+    if(!modalDismissed) {
+      modalVisible = !modalVisible
     }
   }
 
@@ -82,11 +95,19 @@
     localStorage.setItem(REMEMBERME_KEY, JSON.stringify(valueToStore));
   };
 
+  let saveDismissedModalInfo = () => {
+    let valueToStore = {
+      modalDismissed: true,
+    }
+    sessionStorage.setItem(DATA_KEY, JSON.stringify(valueToStore))
+  }
+
   $: {
     if (reservationTimeHumanEnabled) {
-      let humanTime = Date.parse(reserationTimeHuman) / 1000;
-      reservationTime = humanTime;
-    }
+      let humanTime = Date.parse(reserationTimeHuman) / 1000
+      reservationTime = humanTime
+      showModalOneTime()
+    } 
   }
 
   onMount(async () => {
@@ -175,15 +196,12 @@
         </div>
         {:else}
         <div class="form-control w-full max-w">
-          <label for="reserationTime" class="text-gray-700"
-          >What is your reservation time (in seconds from 01.01.1970 example: 1627022437)? Get it like
-          described in the <a
-          target="_blank" class="link" 
-          href="https://www.reddit.com/r/SteamDeck/comments/ui642q/introducing_deckbot/"
-          >reddit DeckBot description</a
-          >
-          or switch to a datetime picker with the toggle below.
-        </label>
+          <label for="reserationTime" class="text-gray-700">
+            You need your reservation time (in seconds from 01.01.1970 example: 1627022437).
+            <label for="timestamp-modal" class="link modal-button">How to get your rtReserveTime?</label>
+            Or switch to a datetime picker with the toggle below.
+          </label>
+          
         <input
         type="number"
         class="input input-bordered input-md w-full max-w {!reserationTimeValid
@@ -218,5 +236,37 @@
       <div class="form-control mt-1 flex flex-col">
         <button class="btn btn-primary btn-sm text-white normal-case" type="submit">Get my current preorder status</button>
       </div>
+
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="timestamp-modal" class="modal-toggle"/>
+      <div id="timestamp-modal-container" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">How to get your rtReserveTime?</h3>
+          <p class="py-2">
+            If you don't have your rtReserveTime, here's how to get it:
+          </p>
+          <ol>
+            <li>Log into the <a href="https://store.steampowered.com/">Steam website</a></li>
+            <li>Go to this <a href="https://store.steampowered.com/reservation/ajaxgetuserstate?rgReservationPackageIDs=%5B595603,595604,595605%5D">API link</a>. It should be a bunch of data. If you only see {'{'}"success": 21{'}'} then you aren't logged in. Repeat Step 1.</li>
+            <li>Find the text rtReserveTime and copy the number immediately thereafter. It will start with 16 and is ten digits long, like 1626460525 If the number is 0, then you've ordered yours and it's too late to find it.</li>
+          </ol>
+          <div class="modal-action">
+            <label for="timestamp-modal" class="btn btn-sm normal-case">Got it</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="inacc-modal" class="modal-toggle" bind:checked={modalVisible} />
+      <div id="inacc-modal-container" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">This may be not accurate</h3>
+          <p class="py-2">A datetime selection is not as accurate as your real timestamp from the steam api. If you want to share your data with us on reddit please use the official steam timestamp.</p>
+          <div class="modal-action">
+            <label for="inacc-modal" class="btn btn-sm normal-case" on:click={dismissModal}>Got it</label>
+          </div>
+        </div>
+      </div>
+
   </form>
 </div>
