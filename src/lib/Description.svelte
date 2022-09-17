@@ -22,11 +22,6 @@
       >. So if get your mail from valve to order your Steam Deck please share your data to help other
       people. This only works with your help!
   </p>
-  <p>
-    This project is inspired from u/Fammy`s work on deckbot which is used in the r/SteamDeck
-    subreddit. Deckbot is a chatbot who responds to user comments to give them the information this
-    calculator here also shows.
-  </p>
-  <p class="text-xs">More on how this works can be found on the<a class="link" href="/explanations">explanation page</a></p>
+  <p class="text-xs">More on how this works can be found on the <a class="link" href="/explanations">explanation page</a></p>
   <hr class="mt-2 mb-3" />
 </div>
