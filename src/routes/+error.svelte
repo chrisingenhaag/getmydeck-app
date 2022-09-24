@@ -1,6 +1,6 @@
 
 <script>
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
   import { page } from '$app/stores';
 </script>
 
@@ -13,7 +13,7 @@
   <p>Oops, this page does not exist</p>
   <a class="link" href="/">Back to Home</a>
   
-  {#if dev && $page.error?.stack}
-  <pre>{$page.error.stack}</pre>
+  {#if dev && $page.error?.message}
+  <pre>{$page.error.message}</pre>
   {/if}
 </div>
