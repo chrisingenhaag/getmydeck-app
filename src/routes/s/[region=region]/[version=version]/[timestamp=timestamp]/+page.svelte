@@ -71,7 +71,7 @@
 <div id="inacc-modal-2-container" class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
     <h3 class="font-bold text-lg">This permalink may be not accurate</h3>
-    <p class="py-2">This link may not be accurate as it seems to be created with the datetime selector (because seconds are 0 and it`s unlikely you reserved at a second 0) instead of the exact timestamp from the steam api. Please use the exact timestamp if you want to share your data with us on reddit.</p>
+    <p class="py-2">This link may not be accurate as it seems to be created with the datetime selector (because seconds are 0) instead of the exact timestamp from the steam api. Please make sure you use the exact timestamp if you want to share your data with us on reddit.</p>
     <p class="py-2">If you`re sure about this timestamp {timestamp} to be correct, ignore this.</p>
     <div class="modal-action">
       <label for="inacc-modal-2" class="btn btn-sm normal-case" on:click={dismissModal}>Got it</label>
