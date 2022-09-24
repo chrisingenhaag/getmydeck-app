@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import {onMount, onDestroy } from 'svelte';
 
   import type { SummaryResponse } from '$lib/DeckSummaryTypes'
