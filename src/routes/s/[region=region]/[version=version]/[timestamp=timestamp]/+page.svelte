@@ -4,6 +4,7 @@
   
   import GetMyDeckResults from '$lib/GetMyDeckResults.svelte';
   import type { DeckResultsPageData } from '$lib/DeckTypes';
+  import FinalNotice from '$lib/FinalNotice.svelte';
   
   export let data: DeckResultsPageData;
 
@@ -49,6 +50,11 @@
 <svelte:head>
   <title>GetMyDeck - Results</title>
 </svelte:head>
+
+
+<div class="prose">
+  <FinalNotice />
+</div>
 
 <div class="text-sm breadcrumbs not-prose">
   <ul>
