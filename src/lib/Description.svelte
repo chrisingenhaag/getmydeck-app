@@ -1,4 +1,9 @@
+<script>
+    import FinalNotice from "./FinalNotice.svelte";
+
+</script>
 <div class="prose">
+  <FinalNotice />
   <p>
     <b>TL;DR</b> This calculator shows how much progress valve was able to make delivering Steam
     Decks based on your personal reservation time and data other reddit users share in subreddit
