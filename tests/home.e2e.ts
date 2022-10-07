@@ -111,19 +111,4 @@ test('index page has expected h1', async ({ page }) => {
 
   await page.goto('/');
   expect(await page.textContent('h1')).toBe('How long to get my Steam Deck?');
-
-  await page.selectOption('select#version', { label: '512GB' });
-  await page.selectOption('select#region', { label: 'EU' });
-
-  await page.fill('#reserationTime', '1627022437');
-
-  await page.click('button');
-
-  await expect(page).toHaveURL('/s/EU/512/1627022437');
-  await expect(page).toHaveTitle(/GetMyDeck - Results/);
-  await expect(page.locator('h3').first()).toHaveText('Results:');
-  await expect(page.locator('h4').first()).toHaveText('Past percentages');
-  await expect(page.locator('div#results > ul > li').first()).toHaveText(
-    'It looks like you have a EU 512GB reservation'
-  );
 });
