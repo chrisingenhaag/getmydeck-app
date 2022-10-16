@@ -1,3 +1,7 @@
+<script>
+  import { Tweet } from 'sveltekit-embed'
+</script>
+
 <div class="prose mb-3">
   <p>
     As of october 6, 2022 valve announced officially that steam deck orders are possible without reservation.
@@ -16,14 +20,7 @@
   </p>
 </div>
 
-<div class="grid place-content-center mb-3">
-  <blockquote class="twitter-tweet">
-    <p lang="en" dir="ltr">BIG NEWS today!<br>
-      ✨ Steam Deck is now available without a reservation! Order one, we&#39;ll ship it to you: <a href="https://t.co/uVdBCpJVuX">https://t.co/uVdBCpJVuX</a><br>
-      📺 The Docking Station is available, too! Connect to peripherals and displays in style: <a href="https://t.co/QqLoKsvASs">https://t.co/QqLoKsvASs</a><br>
-      💾 Plus, lots of new software features: <a href="https://t.co/64VzQeisuZ">pic.twitter.com/64VzQeisuZ</a>
-    </p>
-    &mdash; Steam Deck (@OnDeck) <a href="https://twitter.com/OnDeck/status/1578088497759793152?ref_src=twsrc%5Etfw">October 6, 2022</a>
-  </blockquote> 
+<div class="flex flex-col justify-center mb-3">
+  <Tweet tweetLink="OnDeck/status/1578474399204016129" />
 </div>
 
