@@ -5,7 +5,7 @@ WORKDIR /app
 COPY build/ /app/
 COPY package*.json /app/
 
-RUN npm ci --ignore-scripts
+RUN npm ci --production --ignore-scripts
 
 EXPOSE 3000
 

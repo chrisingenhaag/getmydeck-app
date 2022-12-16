@@ -12,8 +12,10 @@ const config = {
 				target: 'http://localhost:3001'
 			}
 		}
+	},
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
 	}
-
 };
 
 export default config;
