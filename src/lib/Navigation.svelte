@@ -10,7 +10,7 @@
         <li><a href="/explanations">How this works?</a></li>
         <li><a href="/statistics">All queue statistics</a></li>
         <li><a href="/changelog">Changelog</a></li>
-        <li><a href="https://www.reddit.com/r/SteamDeck" target="_blank">r/SteamDeck</a></li>
+        <li><a href="https://www.reddit.com/r/SteamDeck" target="_blank" rel="noreferrer">r/SteamDeck</a></li>
       </ul>
     </div>
   </div>
