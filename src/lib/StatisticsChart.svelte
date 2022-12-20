@@ -1,77 +1,74 @@
 <script lang="ts">
   import { browser } from '$app/environment';
-  import {onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
 
-  import type { SummaryResponse } from '$lib/DeckSummaryTypes'
+  import type { SummaryResponse } from '$lib/DeckSummaryTypes';
   import type { Region, Version } from './DeckTypes';
 
-  import {
-    Chart,
-    registerables
-  } from 'chart.js';
+  import { Chart, registerables } from 'chart.js';
 
-  Chart.register(... registerables);
+  Chart.register(...registerables);
 
   export let summaryData: SummaryResponse;
 
   let colors = {
-    'EU': {
+    EU: {
       '64': '#156DE0',
       '256': '#0E4EA1',
       '512': '#092F61'
     },
-    'UK': {
+    UK: {
       '64': '#E04700',
       '256': '#A13300',
       '512': '#662100'
     },
-    'US': {
+    US: {
       '64': '#1CE002',
       '256': '#14A102',
       '512': '#0C6601'
     }
-  }
+  };
 
   let statChart: Chart;
   let statChartElement: HTMLCanvasElement;
 
-  let data
-  let config
+  let data;
+  let config;
 
-  let labels: string[] = []
-  let values: Date[] = []
+  let labels: string[] = [];
+  let values: Date[] = [];
 
-  let showEU: boolean = true
-  let showUS: boolean = true
-  let showUK: boolean = true
+  let showEU: boolean = true;
+  let showUS: boolean = true;
+  let showUK: boolean = true;
 
   $: {
-    let tempLabels: string[] = summaryData.allDays
-    labels = tempLabels
+    let tempLabels: string[] = summaryData.allDays;
+    labels = tempLabels;
 
-    let dataSetArray: {}[] = []
+    let dataSetArray: {}[] = [];
 
-    let regions: Region[] = []
-    if(showEU) regions.push('EU');
-    if(showUS) regions.push('US');
-    if(showUK) regions.push('UK');
+    let regions: Region[] = [];
+    if (showEU) regions.push('EU');
+    if (showUS) regions.push('US');
+    if (showUK) regions.push('UK');
 
-    let versions: Version[] = ['64','256','512']
+    let versions: Version[] = ['64', '256', '512'];
 
-    regions.forEach(region => {      
-      versions.forEach(version => {
-        let tempvalues: Date[] = []
-        
-        tempLabels.forEach(day => {
-          let dayData = summaryData.summary[region][version].entries[day]
-          if(dayData) {
-            tempvalues.push(Date.parse(dayData.lastOrderDate))
+    regions.forEach((region) => {
+      versions.forEach((version) => {
+        let tempvalues: Date[] = [];
+
+        tempLabels.forEach((day) => {
+          let dayData = summaryData.summary[region][version].entries[day];
+          if (dayData) {
+            tempvalues.push(Date.parse(dayData.lastOrderDate));
           } else {
-            tempvalues.push(null)
+            tempvalues.push(null);
           }
         });
-        
-        values = tempvalues
+
+        values = tempvalues;
         let dataSetObject = {
           label: region + ' ' + version + 'GB',
           data: values,
@@ -81,34 +78,33 @@
           tension: 0.3,
           borderColor: colors[region][version],
           backgroundColor: colors[region][version],
-          pointBorderColor: "#ffffff",
+          pointBorderColor: '#ffffff',
           spanGaps: true,
           datalabels: {
-              display: false
+            display: false
           }
-        }
+        };
 
-        dataSetArray.push(dataSetObject)
-      })
-    })
-
+        dataSetArray.push(dataSetObject);
+      });
+    });
 
     if (statChart) {
-      data.labels = labels
-      data.datasets = dataSetArray
-      
-      statChart.data = data
-      statChart.options = config
-      statChart.update()
+      data.labels = labels;
+      data.datasets = dataSetArray;
+
+      statChart.data = data;
+      statChart.options = config;
+      statChart.update();
     }
   }
 
   onMount(() => {
-    if(browser) {
+    if (browser) {
       data = {
         labels: labels,
         datasets: []
-      }
+      };
       config = {
         borderRadius: '30',
         responsive: true,
@@ -119,47 +115,49 @@
           y: {
             title: {
               display: true,
-              text: "Last order date"
+              text: 'Last order date'
             },
             type: 'linear',
             display: true,
             position: 'left',
             ticks: {
               padding: 10,
-              callback: function(value, index, ticks) { return new Date(value).toISOString().substring(0,10)},
+              callback: function (value, index, ticks) {
+                return new Date(value).toISOString().substring(0, 10);
+              },
               stepSize: 2592000000
             }
           }
         },
         interaction: {
           intersect: false,
-          mode: 'index',
+          mode: 'index'
         },
         layout: {
           padding: {
             top: 24,
-            bottom: 8,
+            bottom: 8
           }
         },
         plugins: {
           filler: {
-            propagate: false,
+            propagate: false
           },
           tooltip: {
             enabled: true,
             position: 'nearest',
             callbacks: {
-              beforeTitle: function(context) {
-                return 'Latest known order on'
-              } ,
-              label: function(context) {
+              beforeTitle: function (context) {
+                return 'Latest known order on';
+              },
+              label: function (context) {
                 let label = context.dataset.label || '';
 
                 if (label) {
-                    label += ': ';
+                  label += ': ';
                 }
                 if (context.parsed.y !== null) {
-                    label += new Date(context.parsed.y).toISOString();
+                  label += new Date(context.parsed.y).toISOString();
                 }
                 return label;
               }
@@ -170,26 +168,24 @@
             display: true,
             title: {
               display: true,
-              text: "Email batch day"
+              text: 'Email batch day'
             }
           }
         }
-      }
-      
+      };
+
       statChart = new Chart(statChartElement, {
         type: 'line',
         data: data,
         options: config
-      })
+      });
     }
-  })
-
+  });
 
   onDestroy(() => {
     if (statChart) statChart.destroy();
     statChart = null;
-  })
-
+  });
 </script>
 
 <canvas bind:this={statChartElement} />
@@ -217,7 +213,6 @@
     </label>
   </div>
 </div>
-
 
 <style>
   .toggle-bg:after {

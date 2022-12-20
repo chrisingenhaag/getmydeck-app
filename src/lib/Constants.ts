@@ -1,1 +1,1 @@
-export const DATA_KEY = 'urn:getmydeck:data'
+export const DATA_KEY = 'urn:getmydeck:data';
