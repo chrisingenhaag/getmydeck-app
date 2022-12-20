@@ -1,7 +1,7 @@
 <script lang="ts">
-import Changelog from "$lib/Changelog.svelte";
+  import Changelog from '$lib/Changelog.svelte';
 
-  import GetMyDeckStatistics from "$lib/GetMyDeckStatistics.svelte";
+  import GetMyDeckStatistics from '$lib/GetMyDeckStatistics.svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@ import Changelog from "$lib/Changelog.svelte";
 
 <div class="text-sm breadcrumbs not-prose">
   <ul>
-    <li><a class="link" href="/">Start</a></li> 
+    <li><a class="link" href="/">Start</a></li>
     <li>Changelog</li>
   </ul>
 </div>
@@ -20,4 +20,3 @@ import Changelog from "$lib/Changelog.svelte";
 </div>
 
 <Changelog />
-
