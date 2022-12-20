@@ -16,8 +16,8 @@
     <li>GetMyDeck does not predict a date when you might get your order mail from valve.</li>
     <li>GetMyDeck has no information about exact shipment amounts.</li>
     <li>
-      GetMyDeck is based on data you or other reddit users share in <a href="https://www.reddit.com/r/SteamDeck" class="link" target="_blank">r/SteamDeck</a> after they
-      receive their order mail from valve. <a href="https://www.reddit.com/u/fammy" class="link" target="_blank">u/Fammy</a> collects this data and shares it in a google
+      GetMyDeck is based on data you or other reddit users share in <a href="https://www.reddit.com/r/SteamDeck" class="link" target="_blank" rel="noreferrer">r/SteamDeck</a> after they
+      receive their order mail from valve. <a href="https://www.reddit.com/u/fammy" class="link" target="_blank" rel="noreferrer">u/Fammy</a> collects this data and shares it in a google
       sheet. This google sheet is scraped by GetMyDeck every minute.
     </li>
     <li>

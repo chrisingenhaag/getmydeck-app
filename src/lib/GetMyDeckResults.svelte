@@ -41,7 +41,7 @@
     </div>
     {#if deckdata.personalInfo.elapsedTimePercentage >= 100}
       <p class="text-xm">Dont forget to share your data on the latest reddit <a
-        target="_blank" class="link" 
+        target="_blank" rel="noreferrer" class="link" 
         href="https://www.reddit.com/r/SteamDeck/search?q=flair_name%3A%22MEGATHREAD%22&restrict_sr=1&sort=new"
         >MegaThread</a
       > if you received your mail now!</p>
@@ -50,7 +50,7 @@
     <h4>Past percentages</h4>
     <DeckChart historicData={deckdata.personalInfo.historicData} />
     <p class="text-xs mb-4">
-      Data for this queue {deckdata.personalInfo.region} {deckdata.personalInfo.version} last updated from deckbot sheet by <a target="_blank" class="link"  href="https://www.reddit.com/u/Fammy"
+      Data for this queue {deckdata.personalInfo.region} {deckdata.personalInfo.version} last updated from deckbot sheet by <a target="_blank" rel="noreferrer" class="link"  href="https://www.reddit.com/u/Fammy"
         >u/Fammy</a
       >: {deckdataLastUpdatedString}
     </p>
