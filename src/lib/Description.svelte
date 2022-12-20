@@ -7,7 +7,7 @@
   <p>
     <b>TL;DR</b> This calculator shows how much progress valve was able to make delivering Steam
     Decks based on your personal reservation time and data other reddit users share in subreddit
-    <a target="_blank" class="link" href="https://www.reddit.com/r/SteamDeck">r/SteamDeck</a>.
+    <a target="_blank" rel="noreferrer" class="link" href="https://www.reddit.com/r/SteamDeck">r/SteamDeck</a>.
   </p>
   <hr class="mt-2 mb-3" />
   <p>
@@ -17,11 +17,11 @@
     every week). The url of the result page is a permalink you can use to check the progress.
   </p>
   <p>
-    This site relies on the data <a target="_blank" class="link" href="https://www.reddit.com/u/Fammy">u/Fammy</a
+    This site relies on the data <a target="_blank" rel="noreferrer" class="link" href="https://www.reddit.com/u/Fammy">u/Fammy</a
       >
       collects from the people share their data in the r/SteamDeck subreddit
       <a
-      target="_blank" class="link" 
+      target="_blank" rel="noreferrer" class="link" 
       href="https://www.reddit.com/r/SteamDeck/search?q=flair_name%3A%22MEGATHREAD%22&restrict_sr=1&sort=new"
       >megathreads</a
       >. So if get your mail from valve to order your Steam Deck please share your data to help other
