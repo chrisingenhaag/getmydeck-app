@@ -1,4 +1,6 @@
 <script lang="ts">
+  export let data;
+  
   import GetMyDeckStatistics from "$lib/GetMyDeckStatistics.svelte";
 </script>
 
@@ -24,4 +26,4 @@
 </div>
 
 
-<GetMyDeckStatistics />
+<GetMyDeckStatistics data={data.summaryData}/>
