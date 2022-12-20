@@ -3,7 +3,7 @@
   import Title from '$lib/Title.svelte';
   import Navigation from '$lib/Navigation.svelte';
 
-  import '../app.css';
+  import '../app.postcss';
 </script>
 
 <div class="container mx-auto shadow-md p-5 mt-3 lg:w-1/2 max-w-prose bg-white">
