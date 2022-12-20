@@ -20,8 +20,8 @@
 
   let rememberme = false;
 
-  let modalVisible = false
-  let modalDismissed = false
+  let modalVisible = false;
+  let modalDismissed = false;
 
   let regions = [
     { id: 0, text: `empty`, value: undefined },
@@ -77,14 +77,14 @@
   }
 
   let dismissModal = () => {
-    modalDismissed = true
-  }
+    modalDismissed = true;
+  };
 
   let showModalOneTime = () => {
-    if(!modalDismissed) {
-      modalVisible = !modalVisible
+    if (!modalDismissed) {
+      modalVisible = !modalVisible;
     }
-  }
+  };
 
   let saveRememberme = () => {
     let valueToStore = {
@@ -97,17 +97,17 @@
 
   let saveDismissedModalInfo = () => {
     let valueToStore = {
-      modalDismissed: true,
-    }
-    sessionStorage.setItem(DATA_KEY, JSON.stringify(valueToStore))
-  }
+      modalDismissed: true
+    };
+    sessionStorage.setItem(DATA_KEY, JSON.stringify(valueToStore));
+  };
 
   $: {
     if (reservationTimeHumanEnabled) {
-      let humanTime = Date.parse(reserationTimeHuman) / 1000
-      reservationTime = humanTime
-      showModalOneTime()
-    } 
+      let humanTime = Date.parse(reserationTimeHuman) / 1000;
+      reservationTime = humanTime;
+      showModalOneTime();
+    }
   }
 
   onMount(async () => {

@@ -1,5 +1,4 @@
-import type { Region, Version } from "./DeckTypes";
-
+import type { Region, Version } from './DeckTypes';
 
 export interface SummaryResponse {
   summary: DeckRegionMap;

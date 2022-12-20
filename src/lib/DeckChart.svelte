@@ -1,59 +1,55 @@
 <script lang="ts">
   import { browser } from '$app/environment';
-  import {onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
 
-  import type { HistoricDeckbotData } from '$lib/DeckTypes'
+  import type { HistoricDeckbotData } from '$lib/DeckTypes';
 
-  import {
-    Chart,
-    registerables
-  } from 'chart.js';
+  import { Chart, registerables } from 'chart.js';
   import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-  Chart.register(... registerables, ChartDataLabels);
+  Chart.register(...registerables, ChartDataLabels);
 
   export let historicData: HistoricDeckbotData[];
 
   let chart: Chart;
   let lineChart: HTMLCanvasElement;
 
-  let data
-  let config
+  let data;
+  let config;
 
-  let percentages: [] = []
-  let increases: [] = []
-  let labels: string[] = []
+  let percentages: [] = [];
+  let increases: [] = [];
+  let labels: string[] = [];
 
-  let showAllData = false
-  let showFullYScale = false
+  let showAllData = false;
+  let showFullYScale = false;
 
   $: {
-    const datacopy: HistoricDeckbotData[] = []
+    const datacopy: HistoricDeckbotData[] = [];
 
-    let tempPercentages: [] = []
-    let tempIncreases: [] = []
-    let tempLabels: string[] = []
+    let tempPercentages: [] = [];
+    let tempIncreases: [] = [];
+    let tempLabels: string[] = [];
 
-    const tempArray = historicData.slice(0, showAllData ? historicData.length - 1 : 7)
-    tempArray.forEach((val) => datacopy.push(Object.assign({}, val)))
+    const tempArray = historicData.slice(0, showAllData ? historicData.length - 1 : 7);
+    tempArray.forEach((val) => datacopy.push(Object.assign({}, val)));
 
     datacopy.reverse().forEach((item) => {
-      const monthDay = item.date.split('-')
-      
-      tempLabels.push(monthDay[1] + '-' + monthDay[2])
-      if(item.elapsedTimePercentage) {
-        tempPercentages.push(item.elapsedTimePercentage)
-      } else {
-        tempPercentages.push(null)
-      }
-      if(item.increasedPercentage) {
-        tempIncreases.push(item.increasedPercentage)
-      } else {
-        tempIncreases.push(null)
-      }
+      const monthDay = item.date.split('-');
 
+      tempLabels.push(monthDay[1] + '-' + monthDay[2]);
+      if (item.elapsedTimePercentage) {
+        tempPercentages.push(item.elapsedTimePercentage);
+      } else {
+        tempPercentages.push(null);
+      }
+      if (item.increasedPercentage) {
+        tempIncreases.push(item.increasedPercentage);
+      } else {
+        tempIncreases.push(null);
+      }
     });
-    
+
     labels = tempLabels;
     increases = tempIncreases;
     percentages = tempPercentages;
@@ -63,9 +59,9 @@
       data.datasets[0].data = percentages;
       data.datasets[0].datalabels.display = !showAllData;
       data.datasets[1].data = increases;
-      
-      config.scales.y.suggestedMax =  showFullYScale ? 100 : undefined;
-      config.scales.y1.suggestedMax = Math.max(...increases)*2;
+
+      config.scales.y.suggestedMax = showFullYScale ? 100 : undefined;
+      config.scales.y1.suggestedMax = Math.max(...increases) * 2;
 
       chart.data = data;
       chart.options = config;
@@ -74,7 +70,7 @@
   }
 
   onMount(() => {
-    if(browser) {
+    if (browser) {
       data = {
         labels: labels,
         datasets: [
@@ -83,10 +79,10 @@
             data: percentages,
             yAxisID: 'y',
             borderWidth: 2,
-            borderColor: "#7cd6fd",
-            backgroundColor: "#7cd6fd",
+            borderColor: '#7cd6fd',
+            backgroundColor: '#7cd6fd',
             pointRadius: 4,
-            pointBorderColor: "#ffffff",
+            pointBorderColor: '#ffffff',
             tension: 0.3,
             spanGaps: true,
             fill: {
@@ -107,10 +103,10 @@
             data: increases,
             yAxisID: 'y1',
             borderWidth: 2,
-            borderColor: "#F5DE41",
-            backgroundColor: "#F5DE41",
+            borderColor: '#F5DE41',
+            backgroundColor: '#F5DE41',
             pointRadius: 4,
-            pointBorderColor: "#ffffff",
+            pointBorderColor: '#ffffff',
             tension: 0.3,
             spanGaps: true,
             datalabels: {
@@ -118,7 +114,7 @@
             }
           }
         ]
-      }
+      };
       config = {
         borderRadius: '30',
         responsive: true,
@@ -129,7 +125,7 @@
           y: {
             title: {
               display: true,
-              text: "Overall Percentage (%)"
+              text: 'Overall Percentage (%)'
             },
             type: 'linear',
             display: true,
@@ -142,45 +138,45 @@
           y1: {
             title: {
               display: true,
-              text: "Percent point increase"
+              text: 'Percent point increase'
             },
             type: 'linear',
             display: true,
             position: 'right',
-            suggestedMax: Math.max(...increases)*2,
+            suggestedMax: Math.max(...increases) * 2,
             // grid line settings
             grid: {
-              drawOnChartArea: false, // only want the grid lines for one axis to show up
+              drawOnChartArea: false // only want the grid lines for one axis to show up
             },
             ticks: {
               padding: 10
             }
-          },
+          }
         },
         interaction: {
           intersect: false,
-          mode: 'index',
+          mode: 'index'
         },
         layout: {
           padding: {
             top: 24,
-            bottom: 8,
+            bottom: 8
           }
         },
         plugins: {
           filler: {
-            propagate: false,
+            propagate: false
           },
           tooltip: {
             enabled: true,
-            position: 'nearest',
+            position: 'nearest'
           },
           legend: {
             position: 'bottom',
             display: true,
             title: {
               display: true,
-              text: "Date (Month-Day)"
+              text: 'Date (Month-Day)'
             },
             labels: {
               usePointStyle: true,
@@ -191,24 +187,22 @@
             }
           }
         }
-      }
-      
+      };
+
       chart = new Chart(lineChart, {
         type: 'line',
         data: data,
         options: config
-      })
+      });
     }
   });
-
 
   onDestroy(() => {
     if (chart) chart.destroy();
     chart = null;
   });
-
 </script>
-  
+
 <canvas bind:this={lineChart} />
 
 <div class="flex flex-row mt-3">
