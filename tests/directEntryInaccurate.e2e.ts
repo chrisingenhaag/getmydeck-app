@@ -134,13 +134,13 @@ test('goto result page with permalink', async ({ page }) => {
 
   await page.goto('/s/EU/512/1627022400');
 
-  await expect(page.locator('div.modal > div.modal-box')).toBeVisible();
-  await expect(page.locator('div.modal > div.modal-box > h3')).toHaveText(
+  await expect(page.locator('dialog.modal > form.modal-box')).toBeVisible();
+  await expect(page.locator('dialog.modal > form.modal-box > h3')).toHaveText(
     'This permalink may be not accurate'
   );
-  await page.click('div.modal-action > label.btn');
+  await page.click('div.modal-action > button.btn');
 
-  await expect(page.locator('div.modal > div.modal-box')).toBeHidden();
+  await expect(page.locator('text=This permalink may be not accurate')).toBeHidden()
 
   await expect(page).toHaveTitle(/GetMyDeck - Results/);
   await expect(page.locator('h3').first()).toHaveText('Results:');

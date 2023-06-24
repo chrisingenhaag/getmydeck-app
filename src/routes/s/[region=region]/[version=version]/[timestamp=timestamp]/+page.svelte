@@ -1,16 +1,18 @@
 <script lang="ts">
+  import type { PageData } from './$types';
   import { onMount } from 'svelte';
+
   import { DATA_KEY } from '$lib/Constants';
 
   import GetMyDeckResults from '$lib/GetMyDeckResults.svelte';
-  import type { DeckResultsPageData } from '$lib/DeckTypes';
   import FinalNotice from '$lib/FinalNotice.svelte';
+  
+  export let data: PageData;
 
-  export let data: DeckResultsPageData;
-
+  let timestamp = data.timestamp;
   let region = data.region;
   let version = data.version;
-  let timestamp = data.timestamp;
+  let deckdata = data.deckdata;
 
   let permalink = `https://getmydeck.ingenhaag.dev/s/${region}/${version}/${timestamp}`;
 
@@ -76,10 +78,9 @@
   <h3>Results:</h3>
 </div>
 
-<!-- Put this part before </body> tag -->
-<input type="checkbox" id="inacc-modal-2" class="modal-toggle" bind:checked={modalVisible} />
-<div id="inacc-modal-2-container" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
+{#if modalVisible}
+<dialog id="my_modal_1" class="modal modal-bottom sm:modal-middle" class:modal-open={modalVisible}>
+  <form method="dialog" class="modal-box">
     <h3 class="font-bold text-lg">This permalink may be not accurate</h3>
     <p class="py-2">
       This link may not be accurate as it seems to be created with the datetime selector (because
@@ -88,11 +89,11 @@
     </p>
     <p class="py-2">If you`re sure about this timestamp {timestamp} to be correct, ignore this.</p>
     <div class="modal-action">
-      <label for="inacc-modal-2" class="btn btn-sm normal-case" on:click={dismissModal}
-        >Got it</label
-      >
+      <!-- if there is a button in form, it will close the modal -->
+      <button class="btn" on:click={dismissModal}>Close</button>
     </div>
-  </div>
-</div>
+  </form>
+</dialog>
+{/if}
 
-<GetMyDeckResults {region} {version} {timestamp} />
+<GetMyDeckResults {deckdata} />
