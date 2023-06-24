@@ -1,36 +1,12 @@
 <script lang="ts">
+  import type { DeckData } from '$lib/DeckTypes';
   import DeckChart from '$lib/DeckChart.svelte';
+  
+  export let deckdata: DeckData;
 
-  import type { DeckData, Region, Version } from '$lib/DeckTypes';
-
-  export let region: Region;
-  export let version: Version;
-  export let timestamp: string;
-
-  let deckdata: DeckData;
-
-  let deckdataLastUpdatedString: string;
+  let deckdataLastUpdatedString: string = new Date(deckdata.personalInfo.lastDataUpdate).toLocaleString();
   let errorMessage: string;
 
-  let fetchDeckInfos = async (re: Region, ver: Version, rt: string) => {
-    errorMessage = '';
-    await fetch(`/api/v2/regions/${re}/versions/${ver}/infos/${rt}`)
-      .then((r) => r.json())
-      .then((data) => {
-        deckdata = data;
-
-        let date = new Date(deckdata.personalInfo.lastDataUpdate);
-        deckdataLastUpdatedString = date.toLocaleString();
-      })
-      .catch(() => {
-        errorMessage =
-          'Problem loading infos. Maybe the data entered is invalid or the api is not available at the moment. Please try again later.';
-      });
-  };
-
-  $: {
-    fetchDeckInfos(region, version, timestamp);
-  }
 </script>
 
 <div class="prose">
