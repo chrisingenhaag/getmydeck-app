@@ -10,5 +10,8 @@
       ]
     }
   },
-  "forwardPorts": [5173,3001]
+  "forwardPorts": [5173,3001],
+  "mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+	]
 }
