@@ -1,8 +1,8 @@
 {
   "name": "getmydeck-app",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "scripts": {
-    "dev": "concurrently -P -s \"command-svelte\" -n json-server,svelte \"json-server mockdata/db.json\" \"vite dev {@}\"",
+    "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test",
@@ -24,8 +24,6 @@
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte": "^2.30.0",
-    "concurrently": "^8.2.0",
-    "json-server": "^0.17.3",
     "sveltekit-embed": "^0.0.12",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.10.1",
