@@ -1,14 +1,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vitest/config';
 
-/** @type {import('vite').UserConfig} */
-const config = {
-  plugins: [sveltekit()],
+export default defineConfig({
+	plugins: [sveltekit()],
   ssr: {
     noExternal: ['chart.js']
   },
-  test: {
-    include: ['src/**/*.{test,spec}.{js,ts}']
-  }
-};
-
-export default config;
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	}
+});
