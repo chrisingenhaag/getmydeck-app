@@ -17,7 +17,7 @@ build:
     - npm run --silent currentversion 2> /dev/null
     - >
       if [ "$CI_COMMIT_REF_NAME" == "main" ]; then
-        echo "export DECK_VERSION=$(npm run --silent currentversion 2> /dev/null);" > version-vars.sh
+        echo "export DECK_VERSION=$(npm run --silent currentversion 2> /dev/null);" >> $GITHUB_OUTPUT
       else
         echo "export DECK_VERSION=$(npm run --silent currentversion 2> /dev/null)-SNAPSHOT;" > version-vars.sh
       fi
