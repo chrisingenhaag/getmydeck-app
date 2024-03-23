@@ -1,5 +1,7 @@
 # GetMyDeck-App
 
+![Build](https://github.com/chrisingenhaag/getmydeck-app/actions/workflows/gradle-build.yml/badge.svg?branch=main)
+
 SvelteKit based web frontend for [getmydeck.ingenhaag.dev](https://getmydeck.ingenhaag.dev)
 
 ## Developing
