@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.0...v2.5.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* lint format to trigger new release ([d137974](https://github.com/chrisingenhaag/getmydeck-app/commit/d13797401c9f9aba17728a09c463d0e30c41567c))
+
 # [2.5.0](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.4.10...v2.5.0) (2025-07-14)
 
 
