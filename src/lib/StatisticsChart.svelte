@@ -188,27 +188,27 @@
 	});
 </script>
 
-<canvas bind:this={statChartElement} ></canvas>
+<canvas bind:this={statChartElement}></canvas>
 
 <div class="flex flex-row my-3">
 	<div class="pr-3">
 		<label for="showUS" class="flex flex-wrap items-center cursor-pointer relative">
 			<input bind:checked={showUS} type="checkbox" id="showUS" class="sr-only" />
-			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3" ></div>
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3"></div>
 			<span class="text-gray-900 text-sm font-medium">US</span>
 		</label>
 	</div>
 	<div class="pr-3">
 		<label for="showUK" class="flex flex-wrap items-center cursor-pointer relative">
 			<input bind:checked={showUK} type="checkbox" id="showUK" class="sr-only" />
-			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3" ></div>
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3"></div>
 			<span class="text-gray-900 text-sm font-medium">UK</span>
 		</label>
 	</div>
 	<div class="">
 		<label for="showEU" class="flex flex-wrap items-center cursor-pointer relative">
 			<input bind:checked={showEU} type="checkbox" id="showEU" class="sr-only" />
-			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3" ></div>
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full mr-3"></div>
 			<span class="text-gray-900 text-sm font-medium">EU</span>
 		</label>
 	</div>
