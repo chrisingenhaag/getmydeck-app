@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.1...v2.5.2) (2025-07-14)
+
+
+### Bug Fixes
+
+* add oci source label ([a647545](https://github.com/chrisingenhaag/getmydeck-app/commit/a647545ec8efea0dcf2fc127b943ac5afdae66e2))
+
 ## [2.5.1](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.0...v2.5.1) (2025-07-14)
 
 
