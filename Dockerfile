@@ -1,5 +1,7 @@
 FROM node:18-alpine
 
+LABEL org.opencontainers.image.source=https://github.com/chrisingenhaag/getmydeck-app
+
 WORKDIR /app
 
 COPY build/ /app/
