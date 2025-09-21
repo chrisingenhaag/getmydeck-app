@@ -1,3 +1,10 @@
+## [2.5.3](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.2...v2.5.3) (2025-09-21)
+
+
+### Bug Fixes
+
+* remove broken healthcheck ([0fae1e9](https://github.com/chrisingenhaag/getmydeck-app/commit/0fae1e900d37eaed6a75415f5df41b574f009aba))
+
 ## [2.5.2](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.1...v2.5.2) (2025-07-14)
 
 
