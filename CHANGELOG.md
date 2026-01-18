@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.3...v2.5.4) (2026-01-18)
+
+
+### Bug Fixes
+
+* trigger release ([405bd27](https://github.com/chrisingenhaag/getmydeck-app/commit/405bd270c760af5d1eea99a04d2447c19f46601f))
+
 ## [2.5.3](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.2...v2.5.3) (2025-09-21)
 
 
