@@ -29,9 +29,9 @@
 			</p>
 		{/if}
 		<p class="text-xs">
-			More explanations on how this works <a class="link" href="/explanations">here</a>
+			<a class="link" href="/explanations">More explanations on how this works</a>
 		</p>
-		<h4>Past percentages</h4>
+		<h2>Past percentages</h2>
 		<DeckChart historicData={deckdata.personalInfo.historicData} />
 		<p class="text-xs mb-4">
 			Data for this queue {deckdata.personalInfo.region}

@@ -5,5 +5,5 @@ test('goto result page with permalink', async ({ page }) => {
 
 	expect(await page.textContent('h1')).toBe('How long to get my Steam Deck?');
 
-	await expect(page.locator('h3').first()).toHaveText('All queue statistics');
+	await expect(page.locator('h2').first()).toHaveText('All queue statistics');
 });
