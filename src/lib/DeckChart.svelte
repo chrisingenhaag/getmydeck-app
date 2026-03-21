@@ -203,7 +203,12 @@
 	});
 </script>
 
-<canvas bind:this={lineChart} />
+<!-- svelte-ignore a11y_no_interactive_element_to_noninteractive_role -->
+<canvas
+	bind:this={lineChart}
+	role="img"
+	aria-label="Line chart showing past shipment percentage and daily increase over time"
+/>
 
 <div class="flex flex-row mt-3">
 	<div class="basis-1/2">
@@ -235,5 +240,8 @@
 	}
 	input:checked + .toggle-bg {
 		@apply bg-blue-600 border-blue-600;
+	}
+	input:focus-visible + .toggle-bg {
+		@apply ring-2 ring-blue-600 ring-offset-1;
 	}
 </style>

@@ -188,7 +188,12 @@
 	});
 </script>
 
-<canvas bind:this={statChartElement}></canvas>
+<!-- svelte-ignore a11y_no_interactive_element_to_noninteractive_role -->
+<canvas
+	bind:this={statChartElement}
+	role="img"
+	aria-label="Line chart showing Steam Deck queue progress by region and version over time"
+></canvas>
 
 <div class="flex flex-row my-3">
 	<div class="pr-3">
@@ -227,5 +232,8 @@
 	}
 	input:checked + .toggle-bg {
 		@apply bg-blue-600 border-blue-600;
+	}
+	input:focus-visible + .toggle-bg {
+		@apply ring-2 ring-blue-600 ring-offset-1;
 	}
 </style>

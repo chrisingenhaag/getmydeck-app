@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>GetMyDeck - Calculator</title>
+	<title>GetMyDeck - Explanations</title>
 </svelte:head>
 
 <div class="text-sm breadcrumbs not-prose">
@@ -10,7 +10,7 @@
 </div>
 
 <div class="prose">
-	<h3>Explanations</h3>
+	<h2>Explanations</h2>
 	<ul>
 		<li>GetMyDeck does not predict a date when you might get your order mail from valve.</li>
 		<li>GetMyDeck has no information about exact shipment amounts.</li>
@@ -47,7 +47,7 @@
 		reservation as well as the amount of time between reservation start and the reservation time of
 		the last known user who got his mail already for the selected region and version.
 	</p>
-	<h4>Example</h4>
+	<h3>Example</h3>
 	<p>Forget about dates and time for a second</p>
 	<ul>
 		<li>Imaging the Steam Deck reservation start was on second 0</li>

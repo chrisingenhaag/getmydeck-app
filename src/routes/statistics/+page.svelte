@@ -18,13 +18,11 @@
 </div>
 
 <div class="prose">
-	<h3>All queue statistics</h3>
+	<h2>All queue statistics</h2>
 	<p>
 		This graph shows the progress of all regions and versions according to the day of batch and
 		latest known order date.
 	</p>
-
-	<h4>Graph</h4>
 </div>
 
 <GetMyDeckStatistics data={data.summaryData} />
