@@ -1,3 +1,10 @@
+## [2.5.5](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.4...v2.5.5) (2026-03-29)
+
+
+### Bug Fixes
+
+* handlebars for cve + actions updates ([542e336](https://github.com/chrisingenhaag/getmydeck-app/commit/542e336e1531f2ccc28673ba32417a2bb9528cdf))
+
 ## [2.5.4](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.3...v2.5.4) (2026-01-18)
 
 
