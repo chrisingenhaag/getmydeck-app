@@ -1,7 +1,7 @@
 {
 	"name": "getmydeck-app",
 	"private": true,
-	"version": "2.5.5",
+	"version": "2.5.6",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

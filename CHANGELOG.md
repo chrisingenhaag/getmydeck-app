@@ -1,3 +1,10 @@
+## [2.5.6](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.5...v2.5.6) (2026-04-09)
+
+
+### Bug Fixes
+
+* **deps:** upgrade vite to 8.x to address security vulnerability ([4399c1f](https://github.com/chrisingenhaag/getmydeck-app/commit/4399c1feb5d41972901cca3bb52779346a5f7f96))
+
 ## [2.5.5](https://github.com/chrisingenhaag/getmydeck-app/compare/v2.5.4...v2.5.5) (2026-03-29)
 
 
