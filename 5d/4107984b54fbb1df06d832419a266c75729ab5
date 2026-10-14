@@ -1,0 +1,26 @@
+package.json
+  s_fd477c386199e1::t_737e90e05d1e62 34
+package-lock.json
+  s_fd477c386199e1::t_28319cfad24a21 31,2687-2689,2693
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5d4107984b54fbb1df06d832419a266c75729ab5",
+  "prompts": {},
+  "humans": {
+    "h_62dd826f025e7a": {
+      "author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  },
+  "sessions": {
+    "s_fd477c386199e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0aa7183-ac55-4079-9d88-1241869404da",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
