@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Changelog from '$lib/Changelog.svelte';
+	import Changelog from '#lib/Changelog.svelte';
 
-	import GetMyDeckStatistics from '$lib/GetMyDeckStatistics.svelte';
+	import GetMyDeckStatistics from '#lib/GetMyDeckStatistics.svelte';
 </script>
 
 <svelte:head>

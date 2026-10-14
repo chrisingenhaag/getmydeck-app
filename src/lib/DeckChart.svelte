@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { onMount, onDestroy } from 'svelte';
 
-	import type { HistoricDeckbotData } from '$lib/DeckTypes';
+	import type { HistoricDeckbotData } from '#lib/DeckTypes.js';
 
 	import { Chart, registerables } from 'chart.js';
 	import ChartDataLabels from 'chartjs-plugin-datalabels';

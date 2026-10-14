@@ -1,7 +1,7 @@
 <script>
-	import Footer from '$lib/Footer.svelte';
-	import Title from '$lib/Title.svelte';
-	import Navigation from '$lib/Navigation.svelte';
+	import Footer from '#lib/Footer.svelte';
+	import Title from '#lib/Title.svelte';
+	import Navigation from '#lib/Navigation.svelte';
 
 	import '../app.css';
 </script>

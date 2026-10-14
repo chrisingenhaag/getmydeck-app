@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { DeckData } from '$lib/DeckTypes';
-	import DeckChart from '$lib/DeckChart.svelte';
+	import type { DeckData } from '#lib/DeckTypes.js';
+	import DeckChart from '#lib/DeckChart.svelte';
 
 	export let deckdata: DeckData;
 

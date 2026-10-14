@@ -1,9 +1,22 @@
+import adapter from '@sveltejs/adapter-node';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-	plugins: [tailwindcss(), sveltekit()],
+	plugins: [
+		tailwindcss(),
+		sveltekit({
+			// Consult https://github.com/sveltejs/svelte-preprocess
+			// for more information about preprocessors
+			preprocess: [vitePreprocess()],
+			adapter: adapter(),
+			paths: {
+				origin: 'https://getmydeck.ingenhaag.dev'
+			}
+		})
+	],
 	ssr: {
 		noExternal: ['chart.js']
 	},

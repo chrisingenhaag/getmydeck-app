@@ -3,7 +3,7 @@
 
 	export let data: PageData;
 
-	import GetMyDeckStatistics from '$lib/GetMyDeckStatistics.svelte';
+	import GetMyDeckStatistics from '#lib/GetMyDeckStatistics.svelte';
 </script>
 
 <svelte:head>
