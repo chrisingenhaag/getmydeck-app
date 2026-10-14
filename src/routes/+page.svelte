@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import type { Region, Version } from '$lib/DeckTypes';
-	import { DATA_KEY } from '$lib/Constants';
-	import Deprecation from '$lib/Deprecation.svelte';
+	import type { Region, Version } from '#lib/DeckTypes.js';
+	import { DATA_KEY } from '#lib/Constants.js';
+	import Deprecation from '#lib/Deprecation.svelte';
 
 	const REMEMBERME_KEY = 'urn:getmydeck:rememberme';
 

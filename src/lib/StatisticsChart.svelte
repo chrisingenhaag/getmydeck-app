@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { onMount, onDestroy } from 'svelte';
 
-	import type { SummaryResponse } from '$lib/DeckSummaryTypes';
+	import type { SummaryResponse } from '#lib/DeckSummaryTypes.js';
 	import type { Region, Version } from './DeckTypes';
 
 	import { Chart, registerables } from 'chart.js';
