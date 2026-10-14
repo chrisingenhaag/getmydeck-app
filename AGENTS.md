@@ -32,11 +32,11 @@ npx vitest run src/lib/SomeFile.test.ts       # Single unit test file
 
 ## Architecture
 
-**Stack:** SvelteKit 2 + Svelte 5, TypeScript, Tailwind CSS 4 + DaisyUI 5, Chart.js, adapter-node
+**Stack:** SvelteKit 3 + Svelte 5, TypeScript, Tailwind CSS 4 + DaisyUI 5, Chart.js, adapter-node
 
 **Routing (`src/routes/`):**
 - `/` — Home page with reservation input form
-- `/s/[region]/[version]/[timestamp]/` — Result pages with shareable URLs; region/version/timestamp are validated by param matchers in `src/params/`
+- `/s/[region]/[version]/[timestamp]/` — Result pages with shareable URLs; region/version/timestamp are validated by param matchers in `src/params.ts`
 - `/statistics/` — All-time statistics page
 - `/changelog/`, `/explanations/` — Info pages
 - `/api/v2/regions/[region]/` — Server-side API endpoints returning shipment data
